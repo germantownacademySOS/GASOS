@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42ED0447EB6ECB581A9DF9DF /* Pods_GASOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */; };
 		C22474941E468EAF002CCA48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22474931E468EAF002CCA48 /* AppDelegate.swift */; };
 		C22474961E468EAF002CCA48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22474951E468EAF002CCA48 /* ViewController.swift */; };
 		C22474991E468EAF002CCA48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22474971E468EAF002CCA48 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GASOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GASOS/Pods-GASOS.release.xcconfig"; sourceTree = "<group>"; };
+		4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GASOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GASOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GASOS/Pods-GASOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C22474901E468EAF002CCA48 /* GASOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GASOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22474931E468EAF002CCA48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22474951E468EAF002CCA48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42ED0447EB6ECB581A9DF9DF /* Pods_GASOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55B7130A7168EDE565B72F01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */,
+				1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7EC0103F25A9507D7D042E01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C22474871E468EAF002CCA48 = {
 			isa = PBXGroup;
 			children = (
 				C22474921E468EAF002CCA48 /* GASOS */,
 				C22474911E468EAF002CCA48 /* Products */,
+				55B7130A7168EDE565B72F01 /* Pods */,
+				7EC0103F25A9507D7D042E01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C22474A21E468EAF002CCA48 /* Build configuration list for PBXNativeTarget "GASOS" */;
 			buildPhases = (
+				7DD8226028EA4504139B4576 /* [CP] Check Pods Manifest.lock */,
 				C224748C1E468EAF002CCA48 /* Sources */,
 				C224748D1E468EAF002CCA48 /* Frameworks */,
 				C224748E1E468EAF002CCA48 /* Resources */,
+				92D1D4DC260FC3C80EDAD159 /* [CP] Embed Pods Frameworks */,
+				348DEB88D07E8BEC6F2A22CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +123,7 @@
 				TargetAttributes = {
 					C224748F1E468EAF002CCA48 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 55YS67HPR8;
+						DevelopmentTeam = C456HZB8BY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		348DEB88D07E8BEC6F2A22CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GASOS/Pods-GASOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DD8226028EA4504139B4576 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92D1D4DC260FC3C80EDAD159 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GASOS/Pods-GASOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C224748C1E468EAF002CCA48 /* Sources */ = {
@@ -259,9 +334,11 @@
 		};
 		C22474A31E468EAF002CCA48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55YS67HPR8;
+				DEVELOPMENT_TEAM = C456HZB8BY;
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.frasers.GASOS;
@@ -272,9 +349,11 @@
 		};
 		C22474A41E468EAF002CCA48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 55YS67HPR8;
+				DEVELOPMENT_TEAM = C456HZB8BY;
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.frasers.GASOS;
@@ -302,6 +381,7 @@
 				C22474A41E468EAF002CCA48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

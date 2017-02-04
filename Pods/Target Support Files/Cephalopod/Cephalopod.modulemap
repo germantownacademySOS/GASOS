@@ -1,0 +1,6 @@
+framework module Cephalopod {
+  umbrella header "Cephalopod-umbrella.h"
+
+  export *
+  module * { export * }
+}
