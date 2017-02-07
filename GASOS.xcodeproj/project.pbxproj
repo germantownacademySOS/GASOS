@@ -13,6 +13,9 @@
 		C22474991E468EAF002CCA48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22474971E468EAF002CCA48 /* Main.storyboard */; };
 		C224749B1E468EAF002CCA48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C224749A1E468EAF002CCA48 /* Assets.xcassets */; };
 		C224749E1E468EAF002CCA48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C224749C1E468EAF002CCA48 /* LaunchScreen.storyboard */; };
+		D2A157E31E494F2B0087319C /* BeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E21E494F2B0087319C /* BeaconInfo.swift */; };
+		D2A157E61E4950140087319C /* SOSExceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E41E4950140087319C /* SOSExceptions.swift */; };
+		D2A157E71E4950140087319C /* SOSSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E51E4950140087319C /* SOSSoundEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		C224749A1E468EAF002CCA48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C224749D1E468EAF002CCA48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C224749F1E468EAF002CCA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2A157E21E494F2B0087319C /* BeaconInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfo.swift; sourceTree = "<group>"; };
+		D2A157E41E4950140087319C /* SOSExceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSExceptions.swift; sourceTree = "<group>"; };
+		D2A157E51E4950140087319C /* SOSSoundEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSSoundEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,9 @@
 				C22474951E468EAF002CCA48 /* ViewController.swift */,
 				C22474971E468EAF002CCA48 /* Main.storyboard */,
 				C224749A1E468EAF002CCA48 /* Assets.xcassets */,
+				D2A157E21E494F2B0087319C /* BeaconInfo.swift */,
+				D2A157E41E4950140087319C /* SOSExceptions.swift */,
+				D2A157E51E4950140087319C /* SOSSoundEngine.swift */,
 				C224749C1E468EAF002CCA48 /* LaunchScreen.storyboard */,
 				C224749F1E468EAF002CCA48 /* Info.plist */,
 			);
@@ -213,7 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22474961E468EAF002CCA48 /* ViewController.swift in Sources */,
+				D2A157E61E4950140087319C /* SOSExceptions.swift in Sources */,
 				C22474941E468EAF002CCA48 /* AppDelegate.swift in Sources */,
+				D2A157E31E494F2B0087319C /* BeaconInfo.swift in Sources */,
+				D2A157E71E4950140087319C /* SOSSoundEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
