@@ -10,7 +10,7 @@ target 'GASOS' do
   pod 'Alamofire', '~> 4.2.0'
   pod 'SwiftyJSON'
   pod 'Cephalopod', '~> 1.0.1'
-  # pod 'SwiftyButton'
+  pod 'SwiftyButton'
   # pod 'OnOffButton', '~> 1.4'
 
   
