@@ -36,9 +36,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "M21new180.png",
+      "size" : "60x60",
       "scale" : "3x"
     },
     {
@@ -77,112 +76,13 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
       "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "M21new152.png",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "M21new167.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "car",
-      "filename" : "M21new120.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "car",
-      "size" : "60x60",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "16x16",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "16x16",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "32x32",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "32x32",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "128x128",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "128x128",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "256x256",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "256x256",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "mac",
-      "size" : "512x512",
-      "scale" : "1x"
-    },
-    {
-      "size" : "512x512",
-      "idiom" : "mac",
-      "filename" : "M21new1024.png",
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "M21new180px.png",
-      "unassigned" : true,
-      "scale" : "3x"
-    },
-    {
-      "size" : "76x76",
-      "idiom" : "ipad",
-      "filename" : "M21new152px.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "M21new167px.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "car",
-      "filename" : "M21new120px.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "512x512",
-      "idiom" : "mac",
-      "filename" : "M21new1024px.png",
-      "unassigned" : true,
       "scale" : "2x"
     }
   ],
