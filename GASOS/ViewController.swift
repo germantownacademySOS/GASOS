@@ -23,8 +23,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var buttonMakeRounded: UIButton!
-    
     let locationManager = CLLocationManager()
     
     let soundPlayer = SOSSoundEngine()
@@ -34,12 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        buttonMakeRounded.layer.masksToBounds = true
-        
-        buttonMakeRounded.layer.cornerRadius = buttonMakeRounded.bounds.size.width / 2
-        
-        buttonMakeRounded.backgroundColor = UIColor.blue
+
         
         // Do any additional setup after loading the view.
         
@@ -57,6 +50,7 @@ class ViewController: UIViewController {
     @IBAction func startMonitor(_ sender: UIButton) {
         // May the games begin
         StartMonitoringForBeacons()
+        sender.setTitle("Monitoring", for: .normal)
     }
     
     
