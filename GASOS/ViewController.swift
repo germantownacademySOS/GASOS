@@ -10,6 +10,7 @@ import CoreLocation
 import UIKit
 import SwiftyJSON
 import Alamofire
+import SwiftyButton
 
 // the following UUID's were generated on 1/15/2017 using https://www.uuidgenerator.net
 //let uuid1 = "57ee374b-4369-47de-bf34-ed42cb45dbe8"
@@ -23,7 +24,6 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var buttonMakeRounded: UIButton!
     
     let locationManager = CLLocationManager()
     
@@ -34,12 +34,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        buttonMakeRounded.layer.masksToBounds = true
-        
-        buttonMakeRounded.layer.cornerRadius = buttonMakeRounded.bounds.size.width / 2
-        
-        buttonMakeRounded.backgroundColor = UIColor.blue
         
         // Do any additional setup after loading the view.
         
@@ -54,14 +48,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func startMonitor(_ sender: UIButton) {
-        // May the games begin
-        StartMonitoringForBeacons()
-    }
-    
     
     func BleLog(_ msg: String) {
         print(msg)
+    }
+
+    @IBAction func pressButtonAction(_ sender: PressableButton) {
+        StartMonitoringForBeacons()
+        sender.setTitle("Monitering", for: .normal)
     }
     
     private func StartMonitoringForBeacons() {
