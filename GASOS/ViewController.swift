@@ -9,7 +9,9 @@
 import CoreLocation
 import UIKit
 import SwiftyJSON
+import SwiftyButton
 import Alamofire
+
 
 // the following UUID's were generated on 1/15/2017 using https://www.uuidgenerator.net
 //let uuid1 = "57ee374b-4369-47de-bf34-ed42cb45dbe8"
@@ -29,16 +31,23 @@ class ViewController: UIViewController {
     
     var mapBeaconInfo = [String: BeaconInfo]()
     
+    @IBOutlet weak var startButton: PressableButton!
+    
+    var monitoring: Bool = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
-        
-        // Do any additional setup after loading the view.
+        // Disable sleep - you don't want to have to keep tapping your phone to keep it awake
+        UIApplication.shared.isIdleTimerDisabled = true
         
         // make sure we can use location services
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
+        
+        // Color the button — SwiftyButton does not yet support coloring main button color :(
+        startButton.colors = .init(button: .blue, shadow: .black) // FIXME: perryprog talk with Mr. Masters
         
     }
     
@@ -50,7 +59,16 @@ class ViewController: UIViewController {
     @IBAction func startMonitor(_ sender: UIButton) {
         // May the games begin
         StartMonitoringForBeacons()
-        sender.setTitle("Monitoring", for: .normal)
+        if monitoring {
+            sender.setTitle("Start!", for: .normal)
+            monitoring = !monitoring
+            // TODO: Stop listening for beacons here
+            soundPlayer.silenceAllSounds() // Will only stop for a little. sfraser: FIXME
+        } else {
+            sender.setTitle("Listening!", for: .normal)
+            monitoring = !monitoring
+        }
+        
     }
     
     
