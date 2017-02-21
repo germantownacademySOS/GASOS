@@ -62,8 +62,7 @@ class ViewController: UIViewController {
         if monitoring {
             sender.setTitle("Start!", for: .normal)
             monitoring = !monitoring
-            // TODO: Stop listening for beacons here
-            soundPlayer.silenceAllSounds() // Will only stop for a little. sfraser: FIXME
+            StopMonitoringForBeacons()
         } else {
             sender.setTitle("Listening!", for: .normal)
             monitoring = !monitoring
@@ -74,6 +73,17 @@ class ViewController: UIViewController {
     
     func BleLog(_ msg: String) {
         print(msg)
+    }
+    
+    private func StopMonitoringForBeacons() {
+        
+        // stop monitoring for the beacons we know about...
+        for beaconInfo in mapBeaconInfo {
+            stopMonitoringItem(item: beaconInfo.value)
+        }
+
+        // make sure the sound engine shuts all the sounds down too
+        soundPlayer.silenceAllSounds()
     }
     
     private func StartMonitoringForBeacons() {
