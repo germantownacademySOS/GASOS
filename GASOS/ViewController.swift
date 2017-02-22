@@ -58,14 +58,14 @@ class ViewController: UIViewController {
     
     @IBAction func startMonitor(_ sender: UIButton) {
         // May the games begin
-        StartMonitoringForBeacons()
         if monitoring {
             sender.setTitle("Start!", for: .normal)
-            monitoring = !monitoring
+            monitoring = false
             StopMonitoringForBeacons()
         } else {
+            StartMonitoringForBeacons()
             sender.setTitle("Listening!", for: .normal)
-            monitoring = !monitoring
+            monitoring = true
         }
         
     }
