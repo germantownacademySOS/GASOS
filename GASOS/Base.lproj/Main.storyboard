@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pTd-IY-Q0H">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--M21-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GASOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,29 +19,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-gO-ski" customClass="PressableButton" customModule="SwiftyButton">
-                                <rect key="frame" x="147" y="338" width="120" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-gO-ski" customClass="FlatButton" customModule="SwiftyButton">
+                                <rect key="frame" x="127.5" y="303.5" width="120" height="60"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QTC-gO-ski" secondAttribute="height" multiplier="2:1" id="KFZ-HZ-QRh"/>
-                                    <constraint firstAttribute="height" constant="60" id="Oer-Et-xcR"/>
-                                    <constraint firstAttribute="width" constant="120" id="ygt-wS-pxC"/>
+                                    <constraint firstAttribute="width" secondItem="QTC-gO-ski" secondAttribute="height" multiplier="2:1" id="9Zg-K2-op6"/>
+                                    <constraint firstAttribute="width" constant="120" id="BnZ-NV-Zcc"/>
                                 </constraints>
                                 <state key="normal" title="Start!">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.99999368190765381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startMonitor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6G-Zc-YYx"/>
                                 </connections>
@@ -49,11 +40,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QTC-gO-ski" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="318" id="cjZ-qg-6gO"/>
-                            <constraint firstItem="QTC-gO-ski" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eCg-ld-oiF"/>
-                            <constraint firstItem="QTC-gO-ski" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nb2-3f-1iK"/>
+                            <constraint firstItem="QTC-gO-ski" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7gx-UM-5pD"/>
+                            <constraint firstItem="QTC-gO-ski" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="waj-mm-C2l"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="M21" id="pQi-4k-cz1">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="UZq-wR-xGF">
+                            <connections>
+                                <segue destination="moc-hw-KZD" kind="show" id="UsO-Yw-LFr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="startButton" destination="QTC-gO-ski" id="0Bm-gq-gXM"/>
                     </connections>
@@ -61,6 +58,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="136.95652173913044"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gfg-fI-0dH">
+            <objects>
+                <viewController id="moc-hw-KZD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E5e-ML-Crc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gf1-d1-ckh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hMj-vk-5sc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blah Lable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzu-sg-sDI">
+                                <rect key="frame" x="147.5" y="323" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yzu-sg-sDI" firstAttribute="centerY" secondItem="hMj-vk-5sc" secondAttribute="centerY" id="Fub-GX-N5K"/>
+                            <constraint firstItem="Yzu-sg-sDI" firstAttribute="centerX" secondItem="hMj-vk-5sc" secondAttribute="centerX" id="R0P-tS-zwU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F75-4F-yg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1050.7246376811595" y="136.95652173913044"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fnc-Sc-3nE">
+            <objects>
+                <navigationController id="pTd-IY-Q0H" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KvV-Zb-Kd0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8KU-c5-ea2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ive-Bu-t97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="137"/>
         </scene>
     </scenes>
 </document>

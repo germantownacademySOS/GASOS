@@ -11,6 +11,7 @@ target 'GASOS' do
   pod 'SwiftyJSON'
   pod 'Cephalopod', '~> 1.0.1'
   pod 'SwiftyButton'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   # pod 'OnOffButton', '~> 1.4'
 
   

@@ -11,6 +11,7 @@ import UIKit
 import SwiftyJSON
 import SwiftyButton
 import Alamofire
+import ChameleonFramework
 
 
 // the following UUID's were generated on 1/15/2017 using https://www.uuidgenerator.net
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
     
     var mapBeaconInfo = [String: BeaconInfo]()
     
-    @IBOutlet weak var startButton: PressableButton!
+    @IBOutlet weak var startButton: FlatButton!
     
     var monitoring: Bool = false
     
@@ -47,7 +48,11 @@ class ViewController: UIViewController {
         locationManager.delegate = self
         
         // Color the button — SwiftyButton does not yet support coloring main button color :(
-        startButton.colors = .init(button: .blue, shadow: .black) // FIXME: perryprog talk with Mr. Masters
+//        startButton.colors = .init(button: .blue, shadow: .black) // FIXME: perryprog talk with Mr. Masters
+//        startButton.colors = .init(button: .flatRedDark, shadow: .flatNavyBlueDark)
+        
+        startButton.color = .flatRed
+        startButton.highlightedColor = .flatRedDark
         
     }
     
