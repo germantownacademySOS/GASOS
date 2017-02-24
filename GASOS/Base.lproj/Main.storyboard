@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,6 +30,7 @@
                                     <constraint firstAttribute="width" secondItem="QTC-gO-ski" secondAttribute="height" multiplier="2:1" id="9Zg-K2-op6"/>
                                     <constraint firstAttribute="width" constant="120" id="BnZ-NV-Zcc"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Start!">
                                     <color key="titleColor" red="1" green="0.99999368190765381" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,7 +47,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="M21" id="pQi-4k-cz1">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="UZq-wR-xGF">
+                        <barButtonItem key="rightBarButtonItem" image="Info_000000_25" id="UZq-wR-xGF">
                             <connections>
                                 <segue destination="moc-hw-KZD" kind="show" id="UsO-Yw-LFr"/>
                             </connections>
@@ -59,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="136.95652173913044"/>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="gfg-fI-0dH">
             <objects>
-                <viewController id="moc-hw-KZD" sceneMemberID="viewController">
+                <viewController id="moc-hw-KZD" customClass="HelpViewController" customModule="GASOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E5e-ML-Crc"/>
                         <viewControllerLayoutGuide type="bottom" id="Gf1-d1-ckh"/>
@@ -71,23 +73,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blah Lable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzu-sg-sDI">
-                                <rect key="frame" x="147.5" y="323" width="80" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lds-yH-f7G">
+                                <rect key="frame" x="16" y="72" width="343" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Great Icons From https://icons8.com
+
+
+Special thanks to:
+Charles Masters
+Gabby Russomagno
+Jakob Slifker
+Jack Kolodny
+Corey Freas
+Scott Fraser
+Perry Fraser</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yzu-sg-sDI" firstAttribute="centerY" secondItem="hMj-vk-5sc" secondAttribute="centerY" id="Fub-GX-N5K"/>
-                            <constraint firstItem="Yzu-sg-sDI" firstAttribute="centerX" secondItem="hMj-vk-5sc" secondAttribute="centerX" id="R0P-tS-zwU"/>
+                            <constraint firstItem="lds-yH-f7G" firstAttribute="top" secondItem="E5e-ML-Crc" secondAttribute="bottom" constant="8" symbolic="YES" id="C1f-3e-dgj"/>
+                            <constraint firstAttribute="bottom" secondItem="lds-yH-f7G" secondAttribute="bottom" constant="20" symbolic="YES" id="RPb-7d-aRZ"/>
+                            <constraint firstItem="lds-yH-f7G" firstAttribute="trailing" secondItem="hMj-vk-5sc" secondAttribute="trailingMargin" id="f5g-9n-0MY"/>
+                            <constraint firstItem="lds-yH-f7G" firstAttribute="leading" secondItem="hMj-vk-5sc" secondAttribute="leadingMargin" id="kpG-4j-LgH"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F75-4F-yg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="136.95652173913044"/>
+            <point key="canvasLocation" x="1050.4000000000001" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fnc-Sc-3nE">
@@ -106,4 +122,7 @@
             <point key="canvasLocation" x="-770" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Info_000000_25" width="25" height="25"/>
+    </resources>
 </document>
