@@ -42,6 +42,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Multiline UILable
+        startExploringMessage.lineBreakMode = .byWordWrapping
+        startExploringMessage.numberOfLines = 0 // For stupid resons this isn't working FIXME. For now, reduce to one line? Original text: Begin exploring.\nMake sure you have your headphones on!
+        
+        
 
         // Disable sleep - you don't want to have to keep tapping your phone to keep it awake
         UIApplication.shared.isIdleTimerDisabled = true
