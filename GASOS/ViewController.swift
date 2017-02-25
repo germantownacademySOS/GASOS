@@ -26,6 +26,8 @@ import ChameleonFramework
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var startExploringMessage: UILabel!
+    
     let locationManager = CLLocationManager()
     
     let soundPlayer = SOSSoundEngine()
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Disable sleep - you don't want to have to keep tapping your phone to keep it awake
         UIApplication.shared.isIdleTimerDisabled = true
@@ -63,6 +66,9 @@ class ViewController: UIViewController {
     
     @IBAction func startMonitor(_ sender: UIButton) {
         // May the games begin
+        
+        startExploringMessage.isHidden = false
+        
         if monitoring {
             sender.setTitle("Start!", for: .normal)
             monitoring = false

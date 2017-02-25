@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-gO-ski" customClass="FlatButton" customModule="SwiftyButton">
-                                <rect key="frame" x="127.5" y="303.5" width="120" height="60"/>
+                                <rect key="frame" x="128" y="304" width="120" height="60"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QTC-gO-ski" secondAttribute="height" multiplier="2:1" id="9Zg-K2-op6"/>
@@ -39,15 +39,27 @@
                                     <action selector="startMonitor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P6G-Zc-YYx"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-jT-4IG">
+                                <rect key="frame" x="16" y="459" width="343" height="86"/>
+                                <string key="text">Begin exploring. 
+Make sure you have your headphones on!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QTC-gO-ski" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7gx-UM-5pD"/>
+                            <constraint firstItem="OuF-jT-4IG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Me5-QT-qdd"/>
+                            <constraint firstItem="OuF-jT-4IG" firstAttribute="top" secondItem="QTC-gO-ski" secondAttribute="bottom" constant="95" id="QTK-TB-bMf"/>
+                            <constraint firstItem="OuF-jT-4IG" firstAttribute="centerX" secondItem="QTC-gO-ski" secondAttribute="centerX" id="Tcg-IW-Obs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OuF-jT-4IG" secondAttribute="bottom" constant="122" id="uLq-BP-4xZ"/>
                             <constraint firstItem="QTC-gO-ski" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="waj-mm-C2l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="M21" id="pQi-4k-cz1">
-                        <barButtonItem key="rightBarButtonItem" image="Info_000000_25" id="UZq-wR-xGF">
+                        <barButtonItem key="rightBarButtonItem" image="Help_Icon" id="UZq-wR-xGF">
                             <connections>
                                 <segue destination="moc-hw-KZD" kind="show" id="UsO-Yw-LFr"/>
                             </connections>
@@ -55,11 +67,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="startButton" destination="QTC-gO-ski" id="0Bm-gq-gXM"/>
+                        <outlet property="startExploringMessage" destination="OuF-jT-4IG" id="etx-wl-uKv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="136.95652173913044"/>
+            <point key="canvasLocation" x="133.59999999999999" y="136.28185907046478"/>
         </scene>
         <!--Help View Controller-->
         <scene sceneID="gfg-fI-0dH">
@@ -76,12 +89,18 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lds-yH-f7G">
                                 <rect key="frame" x="16" y="72" width="343" height="575"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Great Icons From https://icons8.com
+                                <string key="text">
+
+
+
+
+
+Great Icons From https://icons8.com
 
 
 Special thanks to:
-Charles Masters
-Gabby Russomagno
+Charlie Masters
+Gaby Russomagno
 Jakob Slifker
 Jack Kolodny
 Corey Freas
@@ -123,6 +142,6 @@ Perry Fraser</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Info_000000_25" width="25" height="25"/>
+        <image name="Help_Icon" width="25" height="25"/>
     </resources>
 </document>
