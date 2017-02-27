@@ -10,12 +10,13 @@ import Foundation
 import AVFoundation
 import UIKit
 import Cephalopod
+import Alamofire
 
 class SOSSoundEngine {
     
     var mapCephs = [String: Cephalopod]()
     var mapPlayers = [String: AVAudioPlayer]()
-    var mapSounds = [String: NSDataAsset]()
+    var mapAssetSounds = [String: NSDataAsset]()
     var currentBaseSound = ""
     
     init() {
@@ -34,7 +35,7 @@ class SOSSoundEngine {
     }
     
     func isSoundPlaying( named nameOfAudioFileInAssetCatalog: String ) -> Bool {
-     
+        
         if let player = mapPlayers[nameOfAudioFileInAssetCatalog] {
             return player.isPlaying
         }
@@ -44,9 +45,9 @@ class SOSSoundEngine {
     
     
     
-    // 
+    //
     // There can always be one base sound constantly playing. Call this to set it.
-    // This base sound will eventually get silenced once the SOSSoundEngine realizes there are no 
+    // This base sound will eventually get silenced once the SOSSoundEngine realizes there are no
     // other sounds playing, or if a new base sound is set.
     //
     func setBaseSound(named nameOfAudioFileInAssetCatalog: String, atVolume volume: Float) {
@@ -72,7 +73,7 @@ class SOSSoundEngine {
         do {
             try playSound(named: nameOfAudioFileInAssetCatalog, atVolume: 0)
             
-            // if NO sounds are left playing - 
+            // if NO sounds are left playing -
             
         }
         catch {
@@ -83,58 +84,79 @@ class SOSSoundEngine {
     func playSound(named nameOfAudioFileInAssetCatalog: String, atVolume newVolume: Float, panned: Float = 0) throws {
         
         // first check to see if we have already loaded this sound
-        if mapSounds[nameOfAudioFileInAssetCatalog] == nil {
-            guard let sound = NSDataAsset(name: nameOfAudioFileInAssetCatalog) else {
-                throw SOSError.fileAssetNotFound(called: nameOfAudioFileInAssetCatalog)
+        if mapAssetSounds[nameOfAudioFileInAssetCatalog] == nil {
+            
+            
+            // Alamofire 4
+            let destination = DownloadRequest.suggestedDownloadDestination(
+                for: .cachesDirectory,
+                in: .userDomainMask
+            )
+            
+            // this is experimental code - trying to load sound from s3
+            Alamofire.download("https://s3.amazonaws.com/sfraser/m21-Test1.mp3", to: destination)
+                .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                    print("Progress: \(progress.fractionCompleted)")
+                }
+                .response{ response in
+                    
+                    print( response.destinationURL)
+                    
+                    // @todo - the sound is downloading, now need to get it into AVAudioPlayer
+                    let sound = NSDataAsset(name: (response.destinationURL?.absoluteString)!)
+                    self.mapAssetSounds[nameOfAudioFileInAssetCatalog] = sound
             }
             
-            mapSounds[nameOfAudioFileInAssetCatalog] = sound
+        }
+        else {
+            do {
+                
+                // check to see if we already have a player for this sound
+                
+                if let ceph = mapCephs[nameOfAudioFileInAssetCatalog] {
+                    
+                    // if volume is zero make sure we pause the sound
+                    if newVolume == 0
+                    { ceph.fadeOut() }
+                    else {
+                        
+                        if let player = mapPlayers[nameOfAudioFileInAssetCatalog] {
+                            let oldVolume = player.volume
+                            
+                            if(!player.isPlaying) { player.play() }
+                            player.pan = panned
+                            
+                            ceph.fade(fromVolume: Double(oldVolume), toVolume: Double(newVolume)) { finished in
+                                // after the sound fades we check to see if nothing is left but the base sound
+                                // if only the base sound is left playing, we silence it too - it should only
+                                // be playing when we are picking up beacons from somewhere
+                                if finished && !self.areAnySoundsPlayingOtherThanCurrentBase() {
+                                    self.silenceSound(named: self.currentBaseSound)
+                                }
+                                
+                            }
+                        }
+                        
+                    }
+                }
+                else {
+                    
+                    let newPlayer = try AVAudioPlayer(data: (mapAssetSounds[nameOfAudioFileInAssetCatalog]?.data)!)
+                    mapPlayers[nameOfAudioFileInAssetCatalog] = newPlayer
+                    mapCephs[nameOfAudioFileInAssetCatalog] = Cephalopod(player: newPlayer)
+                    newPlayer.volume = 0
+                    newPlayer.numberOfLoops = 0 // will loop forever
+                    newPlayer.pan = panned
+                    newPlayer.setVolume( newVolume, fadeDuration: 1)
+                    newPlayer.play()
+                }
+                
+            } catch let error {
+                print("error initializing AVAudioPlayer: \(error.localizedDescription)")
+            }
         }
         
-        do {
-            
-            // check to see if we already have a player for this sound
-            
-            if let ceph = mapCephs[nameOfAudioFileInAssetCatalog] {
-                
-                // if volume is zero make sure we pause the sound
-                if newVolume == 0
-                { ceph.fadeOut() }
-                else {
-
-                    if let player = mapPlayers[nameOfAudioFileInAssetCatalog] {
-                        let oldVolume = player.volume
-                        
-                        if(!player.isPlaying) { player.play() }
-                        player.pan = panned
-                        
-                        ceph.fade(fromVolume: Double(oldVolume), toVolume: Double(newVolume)) { finished in
-                            // after the sound fades we check to see if nothing is left but the base sound
-                            // if only the base sound is left playing, we silence it too - it should only
-                            // be playing when we are picking up beacons from somewhere
-                            if finished && !self.areAnySoundsPlayingOtherThanCurrentBase() {
-                                self.silenceSound(named: self.currentBaseSound)
-                            }
-                            
-                        }
-                    }
-                    
-                }
-            }
-            else {
-                let newPlayer = try AVAudioPlayer(data: (mapSounds[nameOfAudioFileInAssetCatalog]?.data)!)
-                mapPlayers[nameOfAudioFileInAssetCatalog] = newPlayer
-                mapCephs[nameOfAudioFileInAssetCatalog] = Cephalopod(player: newPlayer)
-                newPlayer.volume = 0
-                newPlayer.numberOfLoops = 0 // will loop forever
-                newPlayer.pan = panned
-                newPlayer.setVolume( newVolume, fadeDuration: 1)
-                newPlayer.play()
-            }
-            
-        } catch {
-            print("error initializing AVAudioPlayer")
-        }
+        
     }
     
     private func areAnySoundsPlayingOtherThanCurrentBase() -> Bool {
