@@ -1,7 +1,6 @@
 # Change Log
 
-## [Unreleased](https://github.com/germantownacademySOS/GASOS/tree/HEAD)
-
+## [V1.0](https://github.com/germantownacademySOS/GASOS/tree/V1.0) (2017-03-01)
 **Closed issues:**
 
 - Need Write Access Please [\#1](https://github.com/germantownacademySOS/GASOS/issues/1)
