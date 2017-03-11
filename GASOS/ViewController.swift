@@ -142,9 +142,9 @@ class ViewController: UIViewController {
         // this next complex bit of code downloads the manifest from Amazon S3,
         // parses it and then starts monitoring for the beacons listed in it
         
-        Alamofire.request("https://s3.amazonaws.com/sfraser/ExampleSosManifest.json")
+        Alamofire.request("https://s3.amazonaws.com/sfraser/ExampleSOSManifest.json")
             // URLCache.shared.removeAllCachedResponses()
-            // sessionManager.request("https://s3.amazonaws.com/sfraser/ExampleSosManifest.json")
+            // sessionManager.request("https://s3.amazonaws.com/sfraser/ExampleSOSManifest.json")
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseString { response in
