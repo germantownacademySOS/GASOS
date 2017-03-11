@@ -6,6 +6,7 @@
 //  Copyright © 2017 Perry Fraser. All rights reserved.
 //
 
+
 import CoreLocation
 import UIKit
 import SwiftyJSON
@@ -26,6 +27,7 @@ import ChameleonFramework
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var startExploringMessage: UILabel!
     
     let locationManager = CLLocationManager()
@@ -41,6 +43,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if DEBUG
+            debugInfo.isHidden = false
+        #endif
+        
         
         // Multiline UILable
         startExploringMessage.lineBreakMode = .byWordWrapping
@@ -88,7 +95,9 @@ class ViewController: UIViewController {
     
     
     func BleLog(_ msg: String) {
-        print(msg)
+        #if DEBUG
+            debugInfo.text = msg
+        #endif
     }
     
     private func StopMonitoringForBeacons() {
@@ -158,6 +167,9 @@ class ViewController: UIViewController {
                                                                           minorValue: CLBeaconMinorValue(beaconJson["minor"].intValue),
                                                                           sound: beaconJson["soundName"].stringValue,
                                                                           panning: beaconJson["pan"].floatValue,
+                                                                          immediateVolume: beaconJson["immediateVolume"].floatValue,
+                                                                          farVolume: beaconJson["farVolume"].floatValue,
+                                                                          nearRssiParameter: beaconJson["nearRssiParameter"].floatValue,
                                                                           backgroundSound: beaconJson["backgroundSound"].stringValue,
                                                                           backgroundVolume: beaconJson["backgroundVolume"].floatValue
                                 ))
@@ -226,7 +238,7 @@ extension ViewController : CLLocationManagerDelegate {
         
         do {
             if (beacons.isEmpty) {
-                // BleLog("No Beacons nearby")
+                 BleLog("No Beacons nearby")
                 // soundPlayer.silenceAllSounds()
                 if let beaconInfo = mapBeaconInfo[region.proximityUUID.uuidString] {
                     
@@ -246,7 +258,7 @@ extension ViewController : CLLocationManagerDelegate {
                 
                 for rangedBeacon in beacons {
                     
-                    //BleLog("FOUND BEACON: \(rangedBeacon.proximityUUID) \(nameForProximity(proximity: rangedBeacon.proximity)) rssi:\(rangedBeacon.rssi))")
+                    BleLog("FOUND BEACON: \(rangedBeacon.proximityUUID) \(nameForProximity(proximity: rangedBeacon.proximity)) rssi:\(rangedBeacon.rssi))")
                     
                     if let beaconInfo = mapBeaconInfo[rangedBeacon.proximityUUID.uuidString] {
                         
@@ -265,24 +277,35 @@ extension ViewController : CLLocationManagerDelegate {
                             
                             // no matter what if there was a background sound play it
                             if !(beaconInfo.backgroundSound.isEmpty) {
-                                //BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
                                 try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                             }
                             
-                            beaconInfo.currentVolume = 1.0
+                            beaconInfo.currentVolume = beaconInfo.immediateVolume
                             try soundPlayer.playSound(named: (beaconInfo.sound), atVolume: beaconInfo.currentVolume, panned: (beaconInfo.pan))
                             
+                            
+                        }
+                        else if rangedBeacon.proximity == CLProximity.far {
+                            if !(beaconInfo.backgroundSound.isEmpty) {
+                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+//                                try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
+                                try soundPlayer.playSound(named: beaconInfo.backgroundSound, atVolume: beaconInfo.farVolume)
+                            }
+                            
+                            beaconInfo.currentVolume = beaconInfo.farVolume
+                            try soundPlayer.playSound(named: (beaconInfo.sound), atVolume: beaconInfo.currentVolume, panned: (beaconInfo.pan))
                             
                         }
                         else {
                             
                             // no matter what if there was a background sound play it
                             if !(beaconInfo.backgroundSound.isEmpty) {
-                                //BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
                                 try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                             }
                             
-                            beaconInfo.currentVolume = (1 - (Float(-rangedBeacon.rssi)/100))
+                            beaconInfo.currentVolume = (1 - (Float(-rangedBeacon.rssi)/beaconInfo.nearRssiParameter))
                             try soundPlayer.playSound(named: (beaconInfo.sound), atVolume: (beaconInfo.currentVolume), panned: (beaconInfo.pan) )
                             
                         }
@@ -303,9 +326,9 @@ extension ViewController : CLLocationManagerDelegate {
             BleLog(statusReport)
             
         } catch SOSError.fileAssetNotFound(let fileName){
-            print("Could not find file " + fileName)
+            debugInfo.text = "Could not find file " + fileName
         } catch {
-            print("Unknown error")
+            debugInfo.text = "Unknown Error"
         }
         
     }
@@ -332,16 +355,16 @@ func nameForProximity(proximity: CLProximity) -> String {
     }
 }
 
-func volumeForProximity(proximity: CLProximity) -> Float {
-    switch proximity {
-    case .unknown:
-        return 0
-    case .immediate:
-        return 1
-    case .near:
-        return 0.6
-    case .far:
-        return 0.1
-    }
-}
+//func volumeForProximity(proximity: CLProximity) -> Float {
+//    switch proximity {
+//    case .unknown:
+//        return 0
+//    case .immediate:
+//        return 1
+//    case .near:
+//        return 0.6
+//    case .far:
+//        return 0.1
+//    }
+//}
 
