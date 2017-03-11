@@ -1,0 +1,110 @@
+This is the JSON from http://www.rfduino.com/package_rfduino166_index.json.
+
+I am checking it in just so we have it backed up.
+
+This is used to setup your Arduino IDE so it can talk to the RFDuino.
+
+Actual setup instructions are here: https://github.com/RFduino/RFduino/blob/master/README.md
+
+{
+   "packages":[
+      {
+         "name":"RFduino",
+         "maintainer":"RFduino",
+         "websiteURL":"http://www.rfduino.com",
+         "email":"support@rfduino.com",
+         "help":{
+            "online":"http://forum.rfduino.com"
+         },
+         "platforms":[
+            {
+               "name": "RFduino Boards",
+               "architecture": "RFduino",
+               "version": "2.3.3",
+               "category": "Arduino",
+               "url": "http://www.rfduino.com/downloads/RFduino_606.tar.gz",
+               "archiveFileName": "RFduino_606.tar.gz",
+               "checksum": "SHA-256:0084a98a9f7a98fb375c29d6f6a4a8ea93a74b0df339114904b0ffe8eab1236a",
+               "size": "34603786",
+               "help":{
+                  "online":"http://forum.rfduino.com"
+               },
+               "boards": [
+                  {
+                     "name": "RFduino"
+                  }
+               ],
+               "toolsDependencies": [
+                  {
+                     "packager": "RFduino",
+                     "name": "arm-none-eabi-gcc",
+                     "version": "4.8.3-2014q1"
+                  }
+               ]
+            },
+            {
+               "name": "RFduino Boards",
+               "architecture": "RFduino",
+               "version": "2.3.2",
+               "category": "Arduino",
+               "url": "http://www.rfduino.com/downloads/RFduino_600.tar.gz",
+               "archiveFileName": "RFduino_600.tar.gz",
+               "checksum": "SHA-256:bfd0b88e5ce0600c404ab9808de128fb9cf2b63b445c08a0b14dec65fa517777",
+               "size": "34599814",
+               "help":{
+                  "online":"http://forum.rfduino.com"
+               },
+               "boards": [
+                  {
+                     "name": "RFduino"
+                  }
+               ],
+               "toolsDependencies": [
+                  {
+                     "packager": "RFduino",
+                     "name": "arm-none-eabi-gcc",
+                     "version": "4.8.3-2014q1"
+                  }
+               ]
+            }
+         ],
+
+         "tools":[
+            {
+               "name":"arm-none-eabi-gcc",
+               "version":"4.8.3-2014q1",
+               "systems":[
+                  {
+                     "host":"i686-mingw32",
+                     "archiveFileName":"gcc-arm-none-eabi-4.8.3-2014q1-windows.tar.gz",
+                     "url":"http://downloads.arduino.cc/gcc-arm-none-eabi-4.8.3-2014q1-windows.tar.gz",
+                     "checksum":"SHA-256:fd8c111c861144f932728e00abd3f7d1107e186eb9cd6083a54c7236ea78b7c2",
+                     "size":"84537449"
+                  },
+                  {
+                     "host":"x86_64-apple-darwin",
+                     "url":"http://downloads.arduino.cc/gcc-arm-none-eabi-4.8.3-2014q1-mac.tar.gz",
+                     "archiveFileName":"gcc-arm-none-eabi-4.8.3-2014q1-mac.tar.gz",
+                     "checksum":"SHA-256:3598acf21600f17a8e4a4e8e193dc422b894dc09384759b270b2ece5facb59c2",
+                     "size":"52518522"
+                  },
+                  {
+                     "host":"x86_64-pc-linux-gnu",
+                     "url":"http://downloads.arduino.cc/gcc-arm-none-eabi-4.8.3-2014q1-linux64.tar.gz",
+                     "archiveFileName":"gcc-arm-none-eabi-4.8.3-2014q1-linux64.tar.gz",
+                     "checksum":"SHA-256:d23f6626148396d6ec42a5b4d928955a703e0757829195fa71a939e5b86eecf6",
+                     "size":"51395093"
+                  },
+                  {
+                     "host":"i686-pc-linux-gnu",
+                     "url":"http://downloads.arduino.cc/gcc-arm-none-eabi-4.8.3-2014q1-linux32.tar.gz",
+                     "archiveFileName":"gcc-arm-none-eabi-4.8.3-2014q1-linux32.tar.gz",
+                     "checksum":"SHA-256:ba1994235f69c526c564f65343f22ddbc9822b2ea8c5ee07dd79d89f6ace2498",
+                     "size":"51029223"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
