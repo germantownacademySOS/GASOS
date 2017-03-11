@@ -61,8 +61,10 @@ void setup() {
   RFduinoBLE.iBeacon = true;
   
   // override the default iBeacon settings
-  //uint8_t uuid[16] = {0xE2, 0xC5, 0x6D, 0xB5, 0xDF, 0xFB, 0x48, 0xD2, 0xB0, 0x60, 0xD0, 0xF5, 0xA7, 0x10, 0x96, 0xE0};
-  //memcpy(RFduinoBLE.iBeaconUUID, uuid, sizeof(RFduinoBLE.iBeaconUUID));
+  // next two lines are an example of how to write the iBeacon UUID using hex, which is harder for us to read,
+  // so I made the new convertUUIDStringToArrayOfInts() function below to let us use plain strings in the code here.
+  // uint8_t uuid[16] = {0xE2, 0xC5, 0x6D, 0xB5, 0xDF, 0xFB, 0x48, 0xD2, 0xB0, 0x60, 0xD0, 0xF5, 0xA7, 0x10, 0x96, 0xE0};
+  // memcpy(RFduinoBLE.iBeaconUUID, uuid, sizeof(RFduinoBLE.iBeaconUUID));
 
   // new way of writing the UUID - this lets us use a String to represent the UUID in code
   // disadvantage is we have to convert it to an array of ints before using, which means we have
@@ -70,10 +72,11 @@ void setup() {
   uint8_t uuidAsInts[16];  
   convertUUIDStringToArrayOfInts(uuid1, uuidAsInts);
   memcpy(RFduinoBLE.iBeaconUUID, uuidAsInts, sizeof(RFduinoBLE.iBeaconUUID));  
-  
+
+  // we aren't really using the major/minor fields - just setting them to something:
   RFduinoBLE.iBeaconMajor = 1234;
   RFduinoBLE.iBeaconMinor = 5678;
-  RFduinoBLE.iBeaconMeasuredPower = 0xC6;
+  // RFduinoBLE.iBeaconMeasuredPower = 0xC6; //2’s complement iBeacon Power Measurement at 1 Meter (default is 0xC5 = -59dBm)
   
   // start the BLE stack
   RFduinoBLE.begin();
