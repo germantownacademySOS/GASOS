@@ -9,7 +9,7 @@
       "soundUrl": null,
       "panning": 1,
       "immediateVolume": 1.0,
-      "farVolume": 0.1,
+      "farVolume": 0.05,
       "nearRssiParameter": 100,
       "backgroundSound": "Pavilion-Base",
       "backgroundVolume": 0.5
@@ -23,7 +23,7 @@
       "soundUrl": null,
       "panning": -1,
       "immediateVolume": 1.0,
-      "farVolume": 0.1,
+      "farVolume": 0.05,
       "nearRssiParameter": 100,
       "backgroundSound": "Pavilion-Base",
       "backgroundVolume": 0.5

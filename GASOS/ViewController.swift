@@ -97,6 +97,7 @@ class ViewController: UIViewController {
     func BleLog(_ msg: String) {
         #if DEBUG
             debugInfo.text = msg
+            print(msg)
         #endif
     }
     
