@@ -27,6 +27,20 @@
       "nearRssiParameter": 100,
       "backgroundSound": "Pavilion-Base",
       "backgroundVolume": 0.5
+    },
+    {
+      "beaconAlias": "Pavilion 3",
+      "beaconUuid": "eff06ca8-ec39-4d22-9aed-418d60b16239",
+      "major": 1234,
+      "minor": 5678,
+      "soundName": "Pavilion-3",
+      "soundUrl": null,
+      "panning": -1,
+      "immediateVolume": 1.0,
+      "farVolume": 0.05,
+      "nearRssiParameter": 100,
+      "backgroundSound": "Pavilion-Base",
+      "backgroundVolume": 0.5
     }
   ]
 }
