@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         #if DEBUG
-            debugInfo.isHidden = false
+                debugInfo.isHidden = false
         #endif
         
         
