@@ -8,7 +8,9 @@
       "soundName": "Pavilion-1",
       "soundUrl": null,
       "panning": 1,
-      "gain": 0,
+      "immediateVolume": 1.0,
+      "farVolume": 0.1,
+      "nearRssiParameter": 100,
       "backgroundSound": "Pavilion-Base",
       "backgroundVolume": 0.5
     },
@@ -20,7 +22,9 @@
       "soundName": "Pavilion-2",
       "soundUrl": null,
       "panning": -1,
-      "gain": 0,
+      "immediateVolume": 1.0,
+      "farVolume": 0.1,
+      "nearRssiParameter": 100,
       "backgroundSound": "Pavilion-Base",
       "backgroundVolume": 0.5
     }
