@@ -28,12 +28,12 @@ class SOSSoundEngine {
             
             cephPod.value.fadeOut()
             
-            //avPlayer.value.setVolume( 0, fadeDuration: 1)
+            //avPlayer.value.setVolume(0, fadeDuration: 1)
             //avPlayer.value.pause()
         }
     }
     
-    func isSoundPlaying( named nameOfAudioFileInAssetCatalog: String ) -> Bool {
+    func isSoundPlaying(named nameOfAudioFileInAssetCatalog: String) -> Bool {
      
         if let player = mapPlayers[nameOfAudioFileInAssetCatalog] {
             return player.isPlaying
@@ -105,7 +105,7 @@ class SOSSoundEngine {
                     if let player = mapPlayers[nameOfAudioFileInAssetCatalog] {
                         let oldVolume = player.volume
                         
-                        if(!player.isPlaying) { player.play() }
+                        if !player.isPlaying { player.play() }
                         player.pan = panned
                         
                         ceph.fade(fromVolume: Double(oldVolume), toVolume: Double(newVolume)) { finished in
@@ -128,7 +128,7 @@ class SOSSoundEngine {
                 newPlayer.volume = 0
                 newPlayer.numberOfLoops = 0 // will loop forever
                 newPlayer.pan = panned
-                newPlayer.setVolume( newVolume, fadeDuration: 1)
+                newPlayer.setVolume(newVolume, fadeDuration: 1)
                 newPlayer.play()
             }
             

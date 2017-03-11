@@ -22,13 +22,10 @@ import ChameleonFramework
 //let uuid4 = "39f326bb-7a23-42a7-9a1d-fd4a8da16f0e"
 //let uuid5 = "681879d3-9ea2-409d-a14e-22dc6992f4aa"
 
-// NOTE: This app no longer loads the JSON from a hard coded string! It now is loading it from S3
-//let jsonManifest = "{\"soundsOfSelf\":[{ \"beaconAlias\":\"test beacon1\", \"beaconUuid\":\"57ee374b-4369-47de-bf34-ed42cb45dbe8\", \"major\": 1234, \"minor\": 5678, \"soundName\": \"m21-Test1\", \"soundUrl\": null, \"panning\": -0.5, \"gain\": 0  }, { \"beaconAlias\":\"test beacon2\", \"beaconUuid\":\"d3830e87-9b71-4797-af49-f16e754dc44b\", \"major\": 1234, \"minor\": 5678, \"soundName\": \"m21-Test2\", \"soundUrl\": null, \"panning\": 0.5, \"gain\": 0  } ]}"
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var debugInfo: UITextView!
-//    @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var startExploringMessage: UILabel!
     
     let locationManager = CLLocationManager()
@@ -63,10 +60,6 @@ class ViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         
-        // Color the button — SwiftyButton does not yet support coloring main button color :(
-//        startButton.colors = .init(button: .blue, shadow: .black) // FIXME: perryprog talk with Mr. Masters
-//        startButton.colors = .init(button: .flatRedDark, shadow: .flatNavyBlueDark)
-        
         startButton.color = .flatRed
         startButton.highlightedColor = .flatRedDark
         
@@ -74,12 +67,9 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func startMonitor(_ sender: UIButton) {
-        // May the games begin
-        
         startExploringMessage.isHidden = false
         
         if monitoring {
@@ -96,7 +86,7 @@ class ViewController: UIViewController {
     
     
     func BleLog(_ msg: String) {
-        #if DEBUG
+        #if DEBUG // Only runs in debug mode
             debugInfo.text = msg + debugInfo.text + "\n"
             print(msg)
         #endif
@@ -114,21 +104,6 @@ class ViewController: UIViewController {
     }
     
     private func StartMonitoringForBeacons() {
-        // just for testing - hard coded start of monitoring a beacon
-        //        startMonitoringItem(item: BeaconInfo(name: "test beacon1",
-        //            uuid: UUID( uuidString: uuid1)!,
-        //            majorValue: 1234,
-        //            minorValue: 5678,
-        //            sound: "m21-Test1",
-        //            panning: -0.5))
-        //
-        //        startMonitoringItem(item: BeaconInfo(name: "test beacon2",
-        //            uuid: UUID( uuidString: uuid2)!,
-        //            majorValue: 1234,
-        //            minorValue: 5678,
-        //            sound: "m21-Test2",
-        //            panning: 0.5 ))
-        
         // let's try and load the JSON from the intarnets!!!
         //let configuration = URLSessionConfiguration.ephemeral
         //configuration.urlCache?.removeAllCachedResponses()
@@ -164,7 +139,7 @@ class ViewController: UIViewController {
                             for (_,beaconJson):(String, JSON) in json["soundsOfSelf"] {
                                 
                                 self.startMonitoringItem(item: BeaconInfo(name: beaconJson["beaconAlias"].stringValue,
-                                                                          uuid: UUID( uuidString: beaconJson["beaconUuid"].stringValue)!,
+                                                                          uuid: UUID(uuidString: beaconJson["beaconUuid"].stringValue)!,
                                                                           majorValue: CLBeaconMajorValue(beaconJson["major"].intValue),
                                                                           minorValue: CLBeaconMinorValue(beaconJson["minor"].intValue),
                                                                           sound: beaconJson["soundName"].stringValue,
@@ -179,11 +154,11 @@ class ViewController: UIViewController {
                             }
                         }
                         else {
-                            self.BleLog( "Failed to parse JSON: \(response.result.value)" )
+                            self.BleLog("Failed to parse JSON: \(response.result.value)")
                         }
                     }
                     else {
-                        self.BleLog( "Failed to read JSON: \(response.result.value)" )
+                        self.BleLog("Failed to read JSON: \(response.result.value)")
                     }
                 case .failure(let error):
                     self.BleLog("Failed to load SOS Manifest: \(error)")
@@ -206,8 +181,8 @@ extension ViewController : CLLocationManagerDelegate {
     private func beaconRegionWithItem(item:BeaconInfo) -> CLBeaconRegion {
         let beaconRegion = CLBeaconRegion(proximityUUID: item.uuid,
                                           //major: item.majorValue,
-            //minor: item.minorValue,
-            identifier: item.name)
+                                          //minor: item.minorValue,
+                                          identifier: item.name)
         return beaconRegion
     }
     
@@ -216,7 +191,7 @@ extension ViewController : CLLocationManagerDelegate {
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
         mapBeaconInfo[item.uuid.uuidString] = item
-        BleLog( "Started Monitoring!!!" )
+        BleLog("Started Monitoring!!!")
     }
     
     func stopMonitoringItem(item: BeaconInfo) {
@@ -224,11 +199,11 @@ extension ViewController : CLLocationManagerDelegate {
         locationManager.stopMonitoring(for: beaconRegion)
         locationManager.stopRangingBeacons(in: beaconRegion)
         mapBeaconInfo.removeValue(forKey: item.uuid.uuidString)
-        BleLog( "STOPPED Monitoring!" )
+        BleLog("STOPPED Monitoring!")
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        BleLog( "Failed monitoring region \(region?.identifier): \(error.localizedDescription)" )
+        BleLog("Failed monitoring region \(region?.identifier): \(error.localizedDescription)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -239,19 +214,19 @@ extension ViewController : CLLocationManagerDelegate {
         // print(">>> didRangeBeacons in \(region.proximityUUID)")
         
         do {
-            if (beacons.isEmpty) {
+            if beacons.isEmpty {
                  BleLog("No Beacons nearby")
                 // soundPlayer.silenceAllSounds()
                 if let beaconInfo = mapBeaconInfo[region.proximityUUID.uuidString] {
                     
-                    if( soundPlayer.isSoundPlaying(named: beaconInfo.sound ) ) {
-                        soundPlayer.silenceSound(named: beaconInfo.sound )
+                    if soundPlayer.isSoundPlaying(named: beaconInfo.sound) {
+                        soundPlayer.silenceSound(named: beaconInfo.sound)
                         beaconInfo.currentStatus = "Out of Range"
                         beaconInfo.currentVolume = 0
                         
                         // turn off the background sound if there was one for this beacon
-                        if( !beaconInfo.backgroundSound.isEmpty) {
-                            soundPlayer.silenceSound(named: beaconInfo.backgroundSound )
+                        if !beaconInfo.backgroundSound.isEmpty {
+                            soundPlayer.silenceSound(named: beaconInfo.backgroundSound)
                         }
                     }
                 }
@@ -266,16 +241,16 @@ extension ViewController : CLLocationManagerDelegate {
                         
                         beaconInfo.currentStatus = "[\(beaconInfo.name)],\(nameForProximity(proximity: rangedBeacon.proximity)) rssi:\(rangedBeacon.rssi)\n";
                         
-                        if(rangedBeacon.proximity == CLProximity.unknown) {
+                        if rangedBeacon.proximity == CLProximity.unknown {
                             soundPlayer.silenceSound(named: (beaconInfo.sound))
                             beaconInfo.currentVolume = 0
                             
                             // if there was a background sound turn it off
-                            if( beaconInfo.backgroundSound.isEmpty) {
-                                soundPlayer.silenceSound(named: beaconInfo.backgroundSound )
+                            if beaconInfo.backgroundSound.isEmpty {
+                                soundPlayer.silenceSound(named: beaconInfo.backgroundSound)
                             }
                         }
-                        else if(rangedBeacon.proximity == CLProximity.immediate) {
+                        else if rangedBeacon.proximity == CLProximity.immediate {
                             
                             // no matter what if there was a background sound play it
                             if !(beaconInfo.backgroundSound.isEmpty) {
@@ -308,7 +283,7 @@ extension ViewController : CLLocationManagerDelegate {
                             }
                             
                             beaconInfo.currentVolume = (1 - (Float(-rangedBeacon.rssi)/beaconInfo.nearRssiParameter))
-                            try soundPlayer.playSound(named: (beaconInfo.sound), atVolume: (beaconInfo.currentVolume), panned: (beaconInfo.pan) )
+                            try soundPlayer.playSound(named: (beaconInfo.sound), atVolume: (beaconInfo.currentVolume), panned: (beaconInfo.pan))
                             
                         }
                         
