@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pTd-IY-Q0H">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTC-gO-ski" customClass="FlatButton" customModule="SwiftyButton">
-                                <rect key="frame" x="308" y="177" width="120" height="60"/>
+                                <rect key="frame" x="147" y="338" width="120" height="60"/>
                                 <color key="backgroundColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QTC-gO-ski" secondAttribute="height" multiplier="2:1" id="9Zg-K2-op6"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore! Make sure you have your headphones on!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-jT-4IG">
-                                <rect key="frame" x="20" y="332" width="694.66666666666663" height="63"/>
+                                <rect key="frame" x="20" y="493" width="372.66666666666669" height="224"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,11 +81,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Gf1-d1-ckh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hMj-vk-5sc">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lds-yH-f7G">
-                                <rect key="frame" x="20" y="72" width="696" height="322"/>
+                                <rect key="frame" x="20" y="72" width="374" height="644"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
