@@ -8,6 +8,7 @@
 
 import UIKit
 import ChameleonFramework
+import TinyConsole
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -27,7 +27,8 @@ import ChameleonFramework
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var debugInfo: UILabel!
+    @IBOutlet weak var debugInfo: UITextView!
+//    @IBOutlet weak var debugInfo: UILabel!
     @IBOutlet weak var startExploringMessage: UILabel!
     
     let locationManager = CLLocationManager()
@@ -96,7 +97,7 @@ class ViewController: UIViewController {
     
     func BleLog(_ msg: String) {
         #if DEBUG
-            debugInfo.text = msg
+            debugInfo.text = debugInfo.text + msg + "\n"
             print(msg)
         #endif
     }
@@ -327,9 +328,9 @@ extension ViewController : CLLocationManagerDelegate {
             BleLog(statusReport)
             
         } catch SOSError.fileAssetNotFound(let fileName){
-            debugInfo.text = "Could not find file " + fileName
+            BleLog("Could not find file " + fileName)
         } catch {
-            debugInfo.text = "Unknown Error"
+            BleLog("Unknown Error")
         }
         
     }
