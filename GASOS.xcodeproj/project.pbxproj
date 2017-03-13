@@ -366,7 +366,7 @@
 				ENABLE_NS_ASSERTIONS = YES;
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.frasers.GASOS;
+				PRODUCT_BUNDLE_IDENTIFIER = net.germantownacademy.M21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -381,7 +381,7 @@
 				DEVELOPMENT_TEAM = C456HZB8BY;
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.frasers.GASOS;
+				PRODUCT_BUNDLE_IDENTIFIER = net.germantownacademy.M21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
