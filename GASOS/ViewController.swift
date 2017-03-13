@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     
     func BleLog(_ msg: String) {
         #if DEBUG // Only runs in debug mode
-            debugInfo.text = msg + debugInfo.text + "\n"
+            debugInfo.text = msg + "\n" + debugInfo.text
             print(msg)
         #endif
     }
@@ -191,7 +191,7 @@ extension ViewController : CLLocationManagerDelegate {
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
         mapBeaconInfo[item.uuid.uuidString] = item
-        BleLog("Started Monitoring!!!")
+        BleLog("LISTENING for \(item.name)")
     }
     
     func stopMonitoringItem(item: BeaconInfo) {
@@ -199,7 +199,7 @@ extension ViewController : CLLocationManagerDelegate {
         locationManager.stopMonitoring(for: beaconRegion)
         locationManager.stopRangingBeacons(in: beaconRegion)
         mapBeaconInfo.removeValue(forKey: item.uuid.uuidString)
-        BleLog("STOPPED Monitoring!")
+        BleLog("STOPPED listening for \(item.name)")
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
@@ -215,14 +215,20 @@ extension ViewController : CLLocationManagerDelegate {
         
         do {
             if beacons.isEmpty {
-                 BleLog("No Beacons nearby")
+                 // BleLog("No Beacons nearby")
                 // soundPlayer.silenceAllSounds()
                 if let beaconInfo = mapBeaconInfo[region.proximityUUID.uuidString] {
                     
                     if soundPlayer.isSoundPlaying(named: beaconInfo.sound) {
                         soundPlayer.silenceSound(named: beaconInfo.sound)
-                        beaconInfo.currentStatus = "Out of Range"
                         beaconInfo.currentVolume = 0
+                        
+                        let newStatus = "[\(beaconInfo.name)],Out of Range"
+                        
+                        if(beaconInfo.currentStatus != newStatus) {
+                            beaconInfo.currentStatus = newStatus
+                            BleLog(newStatus)
+                        }
                         
                         // turn off the background sound if there was one for this beacon
                         if !beaconInfo.backgroundSound.isEmpty {
@@ -235,26 +241,34 @@ extension ViewController : CLLocationManagerDelegate {
                 
                 for rangedBeacon in beacons {
                     
-                    BleLog("FOUND BEACON: \(rangedBeacon.proximityUUID) \(nameForProximity(proximity: rangedBeacon.proximity)) rssi:\(rangedBeacon.rssi))")
+                    //BleLog("FOUND: \(nameForProximity(proximity: rangedBeacon.proximity)))")
                     
                     if let beaconInfo = mapBeaconInfo[rangedBeacon.proximityUUID.uuidString] {
                         
-                        beaconInfo.currentStatus = "[\(beaconInfo.name)],\(nameForProximity(proximity: rangedBeacon.proximity)) rssi:\(rangedBeacon.rssi)\n";
+                        let newStatus = "[\(beaconInfo.name)],\(nameForProximity(proximity: rangedBeacon.proximity))"
+                        
+                        if(beaconInfo.currentStatus != newStatus) {
+                            beaconInfo.currentStatus = newStatus
+                            BleLog(newStatus)
+                        }
                         
                         if rangedBeacon.proximity == CLProximity.unknown {
-                            soundPlayer.silenceSound(named: (beaconInfo.sound))
-                            beaconInfo.currentVolume = 0
+                            
+                            // not sure what to do here - for now we shall ignore
+                            
+                            //soundPlayer.silenceSound(named: (beaconInfo.sound))
+                            //beaconInfo.currentVolume = 0
                             
                             // if there was a background sound turn it off
-                            if beaconInfo.backgroundSound.isEmpty {
-                                soundPlayer.silenceSound(named: beaconInfo.backgroundSound)
-                            }
+                            //if beaconInfo.backgroundSound.isEmpty {
+                            //    soundPlayer.silenceSound(named: beaconInfo.backgroundSound)
+                            //}
                         }
                         else if rangedBeacon.proximity == CLProximity.immediate {
                             
                             // no matter what if there was a background sound play it
                             if !(beaconInfo.backgroundSound.isEmpty) {
-                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+                                // BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
                                 try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                             }
                             
@@ -265,7 +279,7 @@ extension ViewController : CLLocationManagerDelegate {
                         }
                         else if rangedBeacon.proximity == CLProximity.far {
                             if !(beaconInfo.backgroundSound.isEmpty) {
-                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+                                // BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
 //                                try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                                 try soundPlayer.playSound(named: beaconInfo.backgroundSound, atVolume: beaconInfo.farVolume)
                             }
@@ -278,7 +292,7 @@ extension ViewController : CLLocationManagerDelegate {
                             
                             // no matter what if there was a background sound play it
                             if !(beaconInfo.backgroundSound.isEmpty) {
-                                BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
+                                // BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
                                 try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                             }
                             
@@ -292,15 +306,6 @@ extension ViewController : CLLocationManagerDelegate {
                 }
                 
             }
-            
-            // log status on all the beacons we know about
-            var statusReport = ""
-            
-            for beaconInfo in mapBeaconInfo {
-                statusReport += beaconInfo.value.getCurrentStatus() + " vol:\(beaconInfo.value.currentVolume)\n"
-            }
-            
-            BleLog(statusReport)
             
         } catch SOSError.fileAssetNotFound(let fileName){
             BleLog("Could not find file " + fileName)
