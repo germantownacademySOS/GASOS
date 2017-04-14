@@ -154,11 +154,11 @@ class ViewController: UIViewController {
                             }
                         }
                         else {
-                            self.BleLog("Failed to parse JSON: \(response.result.value)")
+                            self.BleLog("Failed to parse JSON: \(String(describing: response.result.value))")
                         }
                     }
                     else {
-                        self.BleLog("Failed to read JSON: \(response.result.value)")
+                        self.BleLog("Failed to read JSON: \(String(describing: response.result.value))")
                     }
                 case .failure(let error):
                     self.BleLog("Failed to load SOS Manifest: \(error)")
@@ -203,7 +203,7 @@ extension ViewController : CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        BleLog("Failed monitoring region \(region?.identifier): \(error.localizedDescription)")
+        BleLog("Failed monitoring region \(String(describing: region?.identifier)): \(error.localizedDescription)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
