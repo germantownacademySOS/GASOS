@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42ED0447EB6ECB581A9DF9DF /* Pods_GASOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */; };
 		C22474941E468EAF002CCA48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22474931E468EAF002CCA48 /* AppDelegate.swift */; };
 		C22474961E468EAF002CCA48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22474951E468EAF002CCA48 /* ViewController.swift */; };
 		C22474991E468EAF002CCA48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C22474971E468EAF002CCA48 /* Main.storyboard */; };
 		C224749B1E468EAF002CCA48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C224749A1E468EAF002CCA48 /* Assets.xcassets */; };
 		C224749E1E468EAF002CCA48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C224749C1E468EAF002CCA48 /* LaunchScreen.storyboard */; };
 		C2CA5A201E60955200B193BC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA5A1F1E60955200B193BC /* HelpViewController.swift */; };
+		C2E609961E79D9E0008EDDC3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E609951E79D9E0008EDDC3 /* Utils.swift */; };
+		C2EABB0D1E79D72000524726 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EABB0C1E79D72000524726 /* FlatButton.swift */; };
+		C2EABB131E79D78800524726 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB0F1E79D78800524726 /* Alamofire.framework */; };
+		C2EABB141E79D78800524726 /* Cephalopod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB101E79D78800524726 /* Cephalopod.framework */; };
+		C2EABB151E79D78800524726 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB111E79D78800524726 /* Chameleon.framework */; };
+		C2EABB161E79D78800524726 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB121E79D78800524726 /* SwiftyJSON.framework */; };
 		D2A157E31E494F2B0087319C /* BeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E21E494F2B0087319C /* BeaconInfo.swift */; };
 		D2A157E61E4950140087319C /* SOSExceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E41E4950140087319C /* SOSExceptions.swift */; };
 		D2A157E71E4950140087319C /* SOSSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E51E4950140087319C /* SOSSoundEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GASOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-GASOS/Pods-GASOS.release.xcconfig"; sourceTree = "<group>"; };
-		4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GASOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GASOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GASOS/Pods-GASOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C22474901E468EAF002CCA48 /* GASOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GASOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22474931E468EAF002CCA48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C22474951E468EAF002CCA48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +33,12 @@
 		C224749D1E468EAF002CCA48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C224749F1E468EAF002CCA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2CA5A1F1E60955200B193BC /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		C2E609951E79D9E0008EDDC3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
+		C2EABB0C1E79D72000524726 /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		C2EABB0F1E79D78800524726 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		C2EABB101E79D78800524726 /* Cephalopod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cephalopod.framework; path = Carthage/Build/iOS/Cephalopod.framework; sourceTree = "<group>"; };
+		C2EABB111E79D78800524726 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		C2EABB121E79D78800524726 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		D2A157E21E494F2B0087319C /* BeaconInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfo.swift; sourceTree = "<group>"; };
 		D2A157E41E4950140087319C /* SOSExceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSExceptions.swift; sourceTree = "<group>"; };
 		D2A157E51E4950140087319C /* SOSSoundEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSSoundEngine.swift; sourceTree = "<group>"; };
@@ -41,37 +49,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42ED0447EB6ECB581A9DF9DF /* Pods_GASOS.framework in Frameworks */,
+				C2EABB131E79D78800524726 /* Alamofire.framework in Frameworks */,
+				C2EABB141E79D78800524726 /* Cephalopod.framework in Frameworks */,
+				C2EABB151E79D78800524726 /* Chameleon.framework in Frameworks */,
+				C2EABB161E79D78800524726 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		55B7130A7168EDE565B72F01 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */,
-				1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		7EC0103F25A9507D7D042E01 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4377BE684B4EABECE82E90FB /* Pods_GASOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		C22474871E468EAF002CCA48 = {
 			isa = PBXGroup;
 			children = (
 				C22474921E468EAF002CCA48 /* GASOS */,
 				C22474911E468EAF002CCA48 /* Products */,
-				55B7130A7168EDE565B72F01 /* Pods */,
-				7EC0103F25A9507D7D042E01 /* Frameworks */,
+				C2EABB0E1E79D78800524726 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +79,7 @@
 		C22474921E468EAF002CCA48 /* GASOS */ = {
 			isa = PBXGroup;
 			children = (
+				C2E609951E79D9E0008EDDC3 /* Utils.swift */,
 				C22474931E468EAF002CCA48 /* AppDelegate.swift */,
 				C2CA5A211E60955900B193BC /* View Controllers */,
 				C22474971E468EAF002CCA48 /* Main.storyboard */,
@@ -95,6 +89,7 @@
 				D2A157E51E4950140087319C /* SOSSoundEngine.swift */,
 				C224749C1E468EAF002CCA48 /* LaunchScreen.storyboard */,
 				C224749F1E468EAF002CCA48 /* Info.plist */,
+				C2EABB0C1E79D72000524726 /* FlatButton.swift */,
 			);
 			path = GASOS;
 			sourceTree = "<group>";
@@ -108,6 +103,17 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		C2EABB0E1E79D78800524726 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2EABB0F1E79D78800524726 /* Alamofire.framework */,
+				C2EABB101E79D78800524726 /* Cephalopod.framework */,
+				C2EABB111E79D78800524726 /* Chameleon.framework */,
+				C2EABB121E79D78800524726 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,12 +121,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C22474A21E468EAF002CCA48 /* Build configuration list for PBXNativeTarget "GASOS" */;
 			buildPhases = (
-				7DD8226028EA4504139B4576 /* [CP] Check Pods Manifest.lock */,
 				C224748C1E468EAF002CCA48 /* Sources */,
 				C224748D1E468EAF002CCA48 /* Frameworks */,
 				C224748E1E468EAF002CCA48 /* Resources */,
-				92D1D4DC260FC3C80EDAD159 /* [CP] Embed Pods Frameworks */,
-				348DEB88D07E8BEC6F2A22CB /* [CP] Copy Pods Resources */,
+				C2EABB171E79D7A600524726 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -180,50 +184,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		348DEB88D07E8BEC6F2A22CB /* [CP] Copy Pods Resources */ = {
+		C2EABB171E79D7A600524726 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cephalopod.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GASOS/Pods-GASOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DD8226028EA4504139B4576 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		92D1D4DC260FC3C80EDAD159 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GASOS/Pods-GASOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -234,10 +211,12 @@
 			files = (
 				C22474961E468EAF002CCA48 /* ViewController.swift in Sources */,
 				C2CA5A201E60955200B193BC /* HelpViewController.swift in Sources */,
+				C2EABB0D1E79D72000524726 /* FlatButton.swift in Sources */,
 				D2A157E61E4950140087319C /* SOSExceptions.swift in Sources */,
 				C22474941E468EAF002CCA48 /* AppDelegate.swift in Sources */,
 				D2A157E31E494F2B0087319C /* BeaconInfo.swift in Sources */,
 				D2A157E71E4950140087319C /* SOSSoundEngine.swift in Sources */,
+				C2E609961E79D9E0008EDDC3 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,31 +337,43 @@
 		};
 		C22474A31E468EAF002CCA48 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B01F5934913F40CEF21C052 /* Pods-GASOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C456HZB8BY;
 				ENABLE_NS_ASSERTIONS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.germantownacademy.M21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C22474A41E468EAF002CCA48 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1ACCEAB145AC39AD9AE3A9EA /* Pods-GASOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C456HZB8BY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GASOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.germantownacademy.M21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

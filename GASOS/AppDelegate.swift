@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ChameleonFramework
+import Chameleon
 
 
 @UIApplicationMain
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Chameleon.setGlobalThemeUsingPrimaryColor(.flatSkyBlue, withSecondaryColor: .flatWhite, andContentStyle: .contrast)
+        Chameleon.setGlobalThemeUsingPrimaryColor(.flatSkyBlue(), withSecondaryColor: .flatWhite(), andContentStyle: .contrast)
         
         return true
     }

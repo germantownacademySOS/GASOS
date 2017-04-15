@@ -10,9 +10,8 @@
 import CoreLocation
 import UIKit
 import SwiftyJSON
-import SwiftyButton
 import Alamofire
-import ChameleonFramework
+import Chameleon
 
 
 // the following UUID's were generated on 1/15/2017 using https://www.uuidgenerator.net
@@ -60,8 +59,8 @@ class ViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         
-        startButton.color = .flatRed
-        startButton.highlightedColor = .flatRedDark
+        startButton.color = .flatRed()
+        startButton.highlightedColor = .flatRedColorDark()
         
     }
     
