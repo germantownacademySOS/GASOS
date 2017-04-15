@@ -1,0 +1,991 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E4B14941D964BD700E77CE4 /* FadeInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4B14931D964BD700E77CE4 /* FadeInTests.swift */; };
+		7E4B14961D964BD700E77CE4 /* Cephalopod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E50296F1D962C1A008140D9 /* Cephalopod.framework */; };
+		7E4B149E1D964CB900E77CE4 /* squid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E4B149D1D964CB900E77CE4 /* squid.mp3 */; };
+		7E4B14A11D964D2A00E77CE4 /* TestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4B14A01D964D2A00E77CE4 /* TestBundle.swift */; };
+		7E5029741D962C1A008140D9 /* Cephalopod.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5029721D962C1A008140D9 /* Cephalopod.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E50297C1D962C63008140D9 /* Cephalopod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297A1D962C63008140D9 /* Cephalopod.swift */; };
+		7E50297D1D962C63008140D9 /* AutoCancellingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297B1D962C63008140D9 /* AutoCancellingTimer.swift */; };
+		7E50298C1D962C78008140D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E50298B1D962C78008140D9 /* Assets.xcassets */; };
+		7E5029941D962C8F008140D9 /* Cephalopod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E50296F1D962C1A008140D9 /* Cephalopod.framework */; };
+		7E5029951D962C8F008140D9 /* Cephalopod.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E50296F1D962C1A008140D9 /* Cephalopod.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E5029A11D962CB8008140D9 /* ControlsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299A1D962CB8008140D9 /* ControlsData.swift */; };
+		7E5029A21D962CB8008140D9 /* ControlType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299B1D962CB8008140D9 /* ControlType.swift */; };
+		7E5029A31D962CB8008140D9 /* SliderControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299C1D962CB8008140D9 /* SliderControls.swift */; };
+		7E5029A41D962CB8008140D9 /* SliderControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299D1D962CB8008140D9 /* SliderControllerDelegate.swift */; };
+		7E5029A51D962CB8008140D9 /* SliderControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299E1D962CB8008140D9 /* SliderControllerView.swift */; };
+		7E5029A61D962CB8008140D9 /* SliderDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50299F1D962CB8008140D9 /* SliderDefaults.swift */; };
+		7E5029A71D962CB8008140D9 /* SliderControlUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029A01D962CB8008140D9 /* SliderControlUserDefaults.swift */; };
+		7E5029AA1D962CCC008140D9 /* squid.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E5029A91D962CCC008140D9 /* squid.mp3 */; };
+		7E5029AD1D962CE1008140D9 /* iiLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029AC1D962CE1008140D9 /* iiLayout.swift */; };
+		7E5029B31D962CEB008140D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029AE1D962CEB008140D9 /* AppDelegate.swift */; };
+		7E5029B41D962CEB008140D9 /* ControlsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029AF1D962CEB008140D9 /* ControlsStorage.swift */; };
+		7E5029B51D962CEB008140D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029B01D962CEB008140D9 /* ViewController.swift */; };
+		7E5029B61D962CEB008140D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5029B11D962CEB008140D9 /* Main.storyboard */; };
+		7E5029B71D962CEB008140D9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E5029B21D962CEB008140D9 /* LaunchScreen.xib */; };
+		7E5029BE1D962DA2008140D9 /* CephalopodDistrib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5029BD1D962DA2008140D9 /* CephalopodDistrib.swift */; };
+		7E5029C81D962E49008140D9 /* Cephalopod-macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5029C61D962E49008140D9 /* Cephalopod-macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E5029D51D962E64008140D9 /* Cephalopod-tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E5029D31D962E64008140D9 /* Cephalopod-tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E5029E61D962E81008140D9 /* Cephalopod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297A1D962C63008140D9 /* Cephalopod.swift */; };
+		7E5029E71D962E81008140D9 /* AutoCancellingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297B1D962C63008140D9 /* AutoCancellingTimer.swift */; };
+		7E5029E81D962E81008140D9 /* Cephalopod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297A1D962C63008140D9 /* Cephalopod.swift */; };
+		7E5029E91D962E81008140D9 /* AutoCancellingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E50297B1D962C63008140D9 /* AutoCancellingTimer.swift */; };
+		7EDD8B151D96513000E96D6E /* FadeOutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD8B141D96513000E96D6E /* FadeOutTests.swift */; };
+		7EDD8B171D9653CC00E96D6E /* FadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD8B161D9653CC00E96D6E /* FadeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E4B14971D964BD700E77CE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E5029661D962C1A008140D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E50296E1D962C1A008140D9;
+			remoteInfo = Cephalopod;
+		};
+		7E5029961D962C90008140D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E5029661D962C1A008140D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E50296E1D962C1A008140D9;
+			remoteInfo = Cephalopod;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7E5029981D962C90008140D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E5029951D962C8F008140D9 /* Cephalopod.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7E4B14911D964BD700E77CE4 /* CephalopodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CephalopodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E4B14931D964BD700E77CE4 /* FadeInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeInTests.swift; sourceTree = "<group>"; };
+		7E4B14951D964BD700E77CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E4B149D1D964CB900E77CE4 /* squid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squid.mp3; sourceTree = "<group>"; };
+		7E4B14A01D964D2A00E77CE4 /* TestBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBundle.swift; sourceTree = "<group>"; };
+		7E50296F1D962C1A008140D9 /* Cephalopod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cephalopod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5029721D962C1A008140D9 /* Cephalopod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cephalopod.h; sourceTree = "<group>"; };
+		7E5029731D962C1A008140D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E50297A1D962C63008140D9 /* Cephalopod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cephalopod.swift; sourceTree = "<group>"; };
+		7E50297B1D962C63008140D9 /* AutoCancellingTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCancellingTimer.swift; sourceTree = "<group>"; };
+		7E5029821D962C78008140D9 /* Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E50298B1D962C78008140D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E5029901D962C78008140D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E50299A1D962CB8008140D9 /* ControlsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsData.swift; sourceTree = "<group>"; };
+		7E50299B1D962CB8008140D9 /* ControlType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlType.swift; sourceTree = "<group>"; };
+		7E50299C1D962CB8008140D9 /* SliderControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControls.swift; sourceTree = "<group>"; };
+		7E50299D1D962CB8008140D9 /* SliderControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControllerDelegate.swift; sourceTree = "<group>"; };
+		7E50299E1D962CB8008140D9 /* SliderControllerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControllerView.swift; sourceTree = "<group>"; };
+		7E50299F1D962CB8008140D9 /* SliderDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderDefaults.swift; sourceTree = "<group>"; };
+		7E5029A01D962CB8008140D9 /* SliderControlUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderControlUserDefaults.swift; sourceTree = "<group>"; };
+		7E5029A91D962CCC008140D9 /* squid.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squid.mp3; sourceTree = "<group>"; };
+		7E5029AC1D962CE1008140D9 /* iiLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iiLayout.swift; sourceTree = "<group>"; };
+		7E5029AE1D962CEB008140D9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7E5029AF1D962CEB008140D9 /* ControlsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlsStorage.swift; sourceTree = "<group>"; };
+		7E5029B01D962CEB008140D9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7E5029B11D962CEB008140D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7E5029B21D962CEB008140D9 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		7E5029BD1D962DA2008140D9 /* CephalopodDistrib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CephalopodDistrib.swift; sourceTree = "<group>"; };
+		7E5029C41D962E49008140D9 /* Cephalopod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cephalopod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5029C61D962E49008140D9 /* Cephalopod-macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cephalopod-macOS.h"; sourceTree = "<group>"; };
+		7E5029C71D962E49008140D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E5029D11D962E64008140D9 /* Cephalopod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cephalopod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5029D31D962E64008140D9 /* Cephalopod-tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cephalopod-tvOS.h"; sourceTree = "<group>"; };
+		7E5029D41D962E64008140D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EDD8B141D96513000E96D6E /* FadeOutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeOutTests.swift; sourceTree = "<group>"; };
+		7EDD8B161D9653CC00E96D6E /* FadeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E4B148E1D964BD700E77CE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4B14961D964BD700E77CE4 /* Cephalopod.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E50296B1D962C1A008140D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E50297F1D962C78008140D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029941D962C8F008140D9 /* Cephalopod.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029C01D962E49008140D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029CD1D962E64008140D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E4B14921D964BD700E77CE4 /* CephalopodTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E4B149F1D964D2400E77CE4 /* Helpers */,
+				7E4B149C1D964CA800E77CE4 /* sounds */,
+				7E4B14931D964BD700E77CE4 /* FadeInTests.swift */,
+				7EDD8B161D9653CC00E96D6E /* FadeTests.swift */,
+				7EDD8B141D96513000E96D6E /* FadeOutTests.swift */,
+				7E4B14951D964BD700E77CE4 /* Info.plist */,
+			);
+			path = CephalopodTests;
+			sourceTree = "<group>";
+		};
+		7E4B149C1D964CA800E77CE4 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7E4B149D1D964CB900E77CE4 /* squid.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+		7E4B149F1D964D2400E77CE4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7E4B14A01D964D2A00E77CE4 /* TestBundle.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7E5029651D962C1A008140D9 = {
+			isa = PBXGroup;
+			children = (
+				7E5029711D962C1A008140D9 /* Cephalopod */,
+				7E5029831D962C78008140D9 /* Demo-iOS */,
+				7E5029B81D962D19008140D9 /* Distrib */,
+				7E5029C51D962E49008140D9 /* Cephalopod-macOS */,
+				7E5029D21D962E64008140D9 /* Cephalopod-tvOS */,
+				7E4B14921D964BD700E77CE4 /* CephalopodTests */,
+				7E5029701D962C1A008140D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E5029701D962C1A008140D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E50296F1D962C1A008140D9 /* Cephalopod.framework */,
+				7E5029821D962C78008140D9 /* Demo-iOS.app */,
+				7E5029C41D962E49008140D9 /* Cephalopod.framework */,
+				7E5029D11D962E64008140D9 /* Cephalopod.framework */,
+				7E4B14911D964BD700E77CE4 /* CephalopodTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E5029711D962C1A008140D9 /* Cephalopod */ = {
+			isa = PBXGroup;
+			children = (
+				7E50297A1D962C63008140D9 /* Cephalopod.swift */,
+				7E50297B1D962C63008140D9 /* AutoCancellingTimer.swift */,
+				7E5029721D962C1A008140D9 /* Cephalopod.h */,
+				7E5029731D962C1A008140D9 /* Info.plist */,
+			);
+			path = Cephalopod;
+			sourceTree = "<group>";
+		};
+		7E5029831D962C78008140D9 /* Demo-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029991D962CB2008140D9 /* Slider */,
+				7E5029A81D962CC2008140D9 /* Sounds */,
+				7E5029AB1D962CD5008140D9 /* Utils */,
+				7E5029AE1D962CEB008140D9 /* AppDelegate.swift */,
+				7E5029AF1D962CEB008140D9 /* ControlsStorage.swift */,
+				7E5029B01D962CEB008140D9 /* ViewController.swift */,
+				7E5029B11D962CEB008140D9 /* Main.storyboard */,
+				7E5029B21D962CEB008140D9 /* LaunchScreen.xib */,
+				7E50298B1D962C78008140D9 /* Assets.xcassets */,
+				7E5029901D962C78008140D9 /* Info.plist */,
+			);
+			path = "Demo-iOS";
+			sourceTree = "<group>";
+		};
+		7E5029991D962CB2008140D9 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				7E50299A1D962CB8008140D9 /* ControlsData.swift */,
+				7E50299B1D962CB8008140D9 /* ControlType.swift */,
+				7E50299C1D962CB8008140D9 /* SliderControls.swift */,
+				7E50299D1D962CB8008140D9 /* SliderControllerDelegate.swift */,
+				7E50299E1D962CB8008140D9 /* SliderControllerView.swift */,
+				7E50299F1D962CB8008140D9 /* SliderDefaults.swift */,
+				7E5029A01D962CB8008140D9 /* SliderControlUserDefaults.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		7E5029A81D962CC2008140D9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029A91D962CCC008140D9 /* squid.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		7E5029AB1D962CD5008140D9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029AC1D962CE1008140D9 /* iiLayout.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7E5029B81D962D19008140D9 /* Distrib */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029BD1D962DA2008140D9 /* CephalopodDistrib.swift */,
+			);
+			path = Distrib;
+			sourceTree = "<group>";
+		};
+		7E5029C51D962E49008140D9 /* Cephalopod-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029C61D962E49008140D9 /* Cephalopod-macOS.h */,
+				7E5029C71D962E49008140D9 /* Info.plist */,
+			);
+			path = "Cephalopod-macOS";
+			sourceTree = "<group>";
+		};
+		7E5029D21D962E64008140D9 /* Cephalopod-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				7E5029D31D962E64008140D9 /* Cephalopod-tvOS.h */,
+				7E5029D41D962E64008140D9 /* Info.plist */,
+			);
+			path = "Cephalopod-tvOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7E50296C1D962C1A008140D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029741D962C1A008140D9 /* Cephalopod.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029C11D962E49008140D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029C81D962E49008140D9 /* Cephalopod-macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029CE1D962E64008140D9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029D51D962E64008140D9 /* Cephalopod-tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXLegacyTarget section */
+		7E5029B91D962D5B008140D9 /* ConcatenateSwiftFiles */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$PROJECT_DIR/Cephalopod $PROJECT_DIR/Distrib/CephalopodDistrib.swift \"//\n// A sound fader for AvAudioPlayer written in Swift for iOS, tvOS, macOS and watchOS.\n//\n// https://github.com/evgenyneu/Cephalopod\n//\n// This file was automatically generated by combining multiple Swift source files.\n//\"";
+			buildConfigurationList = 7E5029BA1D962D5B008140D9 /* Build configuration list for PBXLegacyTarget "ConcatenateSwiftFiles" */;
+			buildPhases = (
+			);
+			buildToolPath = $PROJECT_DIR/scripts/concatenate_swift_files.sh;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = ConcatenateSwiftFiles;
+			passBuildSettingsInEnvironment = 1;
+			productName = ConcatenateSwiftFiles;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		7E4B14901D964BD700E77CE4 /* CephalopodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E4B149B1D964BD700E77CE4 /* Build configuration list for PBXNativeTarget "CephalopodTests" */;
+			buildPhases = (
+				7E4B148D1D964BD700E77CE4 /* Sources */,
+				7E4B148E1D964BD700E77CE4 /* Frameworks */,
+				7E4B148F1D964BD700E77CE4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E4B14981D964BD700E77CE4 /* PBXTargetDependency */,
+			);
+			name = CephalopodTests;
+			productName = CephalopodTests;
+			productReference = 7E4B14911D964BD700E77CE4 /* CephalopodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E50296E1D962C1A008140D9 /* Cephalopod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E5029771D962C1A008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod" */;
+			buildPhases = (
+				7E50296A1D962C1A008140D9 /* Sources */,
+				7E50296B1D962C1A008140D9 /* Frameworks */,
+				7E50296C1D962C1A008140D9 /* Headers */,
+				7E50296D1D962C1A008140D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cephalopod;
+			productName = Cephalopod;
+			productReference = 7E50296F1D962C1A008140D9 /* Cephalopod.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E5029811D962C78008140D9 /* Demo-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E5029911D962C78008140D9 /* Build configuration list for PBXNativeTarget "Demo-iOS" */;
+			buildPhases = (
+				7E50297E1D962C78008140D9 /* Sources */,
+				7E50297F1D962C78008140D9 /* Frameworks */,
+				7E5029801D962C78008140D9 /* Resources */,
+				7E5029981D962C90008140D9 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E5029971D962C90008140D9 /* PBXTargetDependency */,
+			);
+			name = "Demo-iOS";
+			productName = "Demo-iOS";
+			productReference = 7E5029821D962C78008140D9 /* Demo-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E5029C31D962E49008140D9 /* Cephalopod-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E5029C91D962E49008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod-macOS" */;
+			buildPhases = (
+				7E5029BF1D962E49008140D9 /* Sources */,
+				7E5029C01D962E49008140D9 /* Frameworks */,
+				7E5029C11D962E49008140D9 /* Headers */,
+				7E5029C21D962E49008140D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cephalopod-macOS";
+			productName = "Cephalopod-macOS";
+			productReference = 7E5029C41D962E49008140D9 /* Cephalopod.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E5029D01D962E64008140D9 /* Cephalopod-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E5029D61D962E64008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod-tvOS" */;
+			buildPhases = (
+				7E5029CC1D962E64008140D9 /* Sources */,
+				7E5029CD1D962E64008140D9 /* Frameworks */,
+				7E5029CE1D962E64008140D9 /* Headers */,
+				7E5029CF1D962E64008140D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cephalopod-tvOS";
+			productName = "Cephalopod-tvOS";
+			productReference = 7E5029D11D962E64008140D9 /* Cephalopod.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E5029661D962C1A008140D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Evgenii Neumerzhitckii";
+				TargetAttributes = {
+					7E4B14901D964BD700E77CE4 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+					7E50296E1D962C1A008140D9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BS677JRE62;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
+					};
+					7E5029811D962C78008140D9 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+					7E5029B91D962D5B008140D9 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = BS677JRE62;
+						ProvisioningStyle = Automatic;
+					};
+					7E5029C31D962E49008140D9 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+					7E5029D01D962E64008140D9 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 7E5029691D962C1A008140D9 /* Build configuration list for PBXProject "Cephalopod" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E5029651D962C1A008140D9;
+			productRefGroup = 7E5029701D962C1A008140D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E50296E1D962C1A008140D9 /* Cephalopod */,
+				7E5029C31D962E49008140D9 /* Cephalopod-macOS */,
+				7E5029D01D962E64008140D9 /* Cephalopod-tvOS */,
+				7E5029811D962C78008140D9 /* Demo-iOS */,
+				7E5029B91D962D5B008140D9 /* ConcatenateSwiftFiles */,
+				7E4B14901D964BD700E77CE4 /* CephalopodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E4B148F1D964BD700E77CE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4B149E1D964CB900E77CE4 /* squid.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E50296D1D962C1A008140D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029801D962C78008140D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029B71D962CEB008140D9 /* LaunchScreen.xib in Resources */,
+				7E5029B61D962CEB008140D9 /* Main.storyboard in Resources */,
+				7E50298C1D962C78008140D9 /* Assets.xcassets in Resources */,
+				7E5029AA1D962CCC008140D9 /* squid.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029C21D962E49008140D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029CF1D962E64008140D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E4B148D1D964BD700E77CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E4B14941D964BD700E77CE4 /* FadeInTests.swift in Sources */,
+				7EDD8B171D9653CC00E96D6E /* FadeTests.swift in Sources */,
+				7EDD8B151D96513000E96D6E /* FadeOutTests.swift in Sources */,
+				7E4B14A11D964D2A00E77CE4 /* TestBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E50296A1D962C1A008140D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E50297D1D962C63008140D9 /* AutoCancellingTimer.swift in Sources */,
+				7E50297C1D962C63008140D9 /* Cephalopod.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E50297E1D962C78008140D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029A71D962CB8008140D9 /* SliderControlUserDefaults.swift in Sources */,
+				7E5029AD1D962CE1008140D9 /* iiLayout.swift in Sources */,
+				7E5029A61D962CB8008140D9 /* SliderDefaults.swift in Sources */,
+				7E5029B31D962CEB008140D9 /* AppDelegate.swift in Sources */,
+				7E5029B51D962CEB008140D9 /* ViewController.swift in Sources */,
+				7E5029A11D962CB8008140D9 /* ControlsData.swift in Sources */,
+				7E5029A31D962CB8008140D9 /* SliderControls.swift in Sources */,
+				7E5029A51D962CB8008140D9 /* SliderControllerView.swift in Sources */,
+				7E5029A21D962CB8008140D9 /* ControlType.swift in Sources */,
+				7E5029A41D962CB8008140D9 /* SliderControllerDelegate.swift in Sources */,
+				7E5029BE1D962DA2008140D9 /* CephalopodDistrib.swift in Sources */,
+				7E5029B41D962CEB008140D9 /* ControlsStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029BF1D962E49008140D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029E71D962E81008140D9 /* AutoCancellingTimer.swift in Sources */,
+				7E5029E61D962E81008140D9 /* Cephalopod.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E5029CC1D962E64008140D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E5029E91D962E81008140D9 /* AutoCancellingTimer.swift in Sources */,
+				7E5029E81D962E81008140D9 /* Cephalopod.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E4B14981D964BD700E77CE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E50296E1D962C1A008140D9 /* Cephalopod */;
+			targetProxy = 7E4B14971D964BD700E77CE4 /* PBXContainerItemProxy */;
+		};
+		7E5029971D962C90008140D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E50296E1D962C1A008140D9 /* Cephalopod */;
+			targetProxy = 7E5029961D962C90008140D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7E4B14991D964BD700E77CE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CephalopodTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenii.CephalopodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7E4B149A1D964BD700E77CE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = CephalopodTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenii.CephalopodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7E5029751D962C1A008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E5029761D962C1A008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7E5029781D962C1A008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BS677JRE62;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Cephalopod/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenii.Cephalopod;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7E5029791D962C1A008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BS677JRE62;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Cephalopod/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenii.Cephalopod;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7E5029921D962C78008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Demo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Demo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7E5029931D962C78008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Demo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Demo-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7E5029BB1D962D5B008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BS677JRE62;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7E5029BC1D962D5B008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BS677JRE62;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7E5029CA1D962E49008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Cephalopod-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Cephalopod-macOS";
+				PRODUCT_NAME = Cephalopod;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7E5029CB1D962E49008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Cephalopod-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Cephalopod-macOS";
+				PRODUCT_NAME = Cephalopod;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7E5029D71D962E64008140D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Cephalopod-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Cephalopod-tvOS";
+				PRODUCT_NAME = Cephalopod;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		7E5029D81D962E64008140D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Cephalopod-tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evgenii.Cephalopod-tvOS";
+				PRODUCT_NAME = Cephalopod;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E4B149B1D964BD700E77CE4 /* Build configuration list for PBXNativeTarget "CephalopodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E4B14991D964BD700E77CE4 /* Debug */,
+				7E4B149A1D964BD700E77CE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029691D962C1A008140D9 /* Build configuration list for PBXProject "Cephalopod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029751D962C1A008140D9 /* Debug */,
+				7E5029761D962C1A008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029771D962C1A008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029781D962C1A008140D9 /* Debug */,
+				7E5029791D962C1A008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029911D962C78008140D9 /* Build configuration list for PBXNativeTarget "Demo-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029921D962C78008140D9 /* Debug */,
+				7E5029931D962C78008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029BA1D962D5B008140D9 /* Build configuration list for PBXLegacyTarget "ConcatenateSwiftFiles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029BB1D962D5B008140D9 /* Debug */,
+				7E5029BC1D962D5B008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029C91D962E49008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029CA1D962E49008140D9 /* Debug */,
+				7E5029CB1D962E49008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E5029D61D962E64008140D9 /* Build configuration list for PBXNativeTarget "Cephalopod-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E5029D71D962E64008140D9 /* Debug */,
+				7E5029D81D962E64008140D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E5029661D962C1A008140D9 /* Project object */;
+}

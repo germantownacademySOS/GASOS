@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" ~> 4.4
+github "SwiftyJSON/SwiftyJSON"
+github "evgenyneu/Cephalopod" ~> 1.0
+github "TakeScoop/SwiftyButton"
+github "ViccAlexander/Chameleon"
