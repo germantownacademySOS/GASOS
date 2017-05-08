@@ -15,13 +15,13 @@
 		C2CA5A201E60955200B193BC /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2CA5A1F1E60955200B193BC /* HelpViewController.swift */; };
 		C2E609961E79D9E0008EDDC3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E609951E79D9E0008EDDC3 /* Utils.swift */; };
 		C2EABB0D1E79D72000524726 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EABB0C1E79D72000524726 /* FlatButton.swift */; };
-		C2EABB131E79D78800524726 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB0F1E79D78800524726 /* Alamofire.framework */; };
-		C2EABB141E79D78800524726 /* Cephalopod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB101E79D78800524726 /* Cephalopod.framework */; };
-		C2EABB151E79D78800524726 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB111E79D78800524726 /* Chameleon.framework */; };
-		C2EABB161E79D78800524726 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EABB121E79D78800524726 /* SwiftyJSON.framework */; };
 		D2A157E31E494F2B0087319C /* BeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E21E494F2B0087319C /* BeaconInfo.swift */; };
 		D2A157E61E4950140087319C /* SOSExceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E41E4950140087319C /* SOSExceptions.swift */; };
 		D2A157E71E4950140087319C /* SOSSoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A157E51E4950140087319C /* SOSSoundEngine.swift */; };
+		D2C2373E1EBEB1C2002565E8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC31C21EBC20C4001D2239 /* Alamofire.framework */; };
+		D2C2373F1EBEB1C2002565E8 /* Cephalopod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC31C41EBC20DD001D2239 /* Cephalopod.framework */; };
+		D2C237401EBEB1C2002565E8 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC31C61EBC20E1001D2239 /* Chameleon.framework */; };
+		D2C237411EBEB1C2002565E8 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AC31C81EBC20E6001D2239 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +35,13 @@
 		C2CA5A1F1E60955200B193BC /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		C2E609951E79D9E0008EDDC3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils.swift; sourceTree = "<group>"; };
 		C2EABB0C1E79D72000524726 /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
-		C2EABB0F1E79D78800524726 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		C2EABB101E79D78800524726 /* Cephalopod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cephalopod.framework; path = Carthage/Build/iOS/Cephalopod.framework; sourceTree = "<group>"; };
-		C2EABB111E79D78800524726 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
-		C2EABB121E79D78800524726 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		D2A157E21E494F2B0087319C /* BeaconInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconInfo.swift; sourceTree = "<group>"; };
 		D2A157E41E4950140087319C /* SOSExceptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSExceptions.swift; sourceTree = "<group>"; };
 		D2A157E51E4950140087319C /* SOSSoundEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSSoundEngine.swift; sourceTree = "<group>"; };
+		D2AC31C21EBC20C4001D2239 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D2AC31C41EBC20DD001D2239 /* Cephalopod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cephalopod.framework; path = Carthage/Build/iOS/Cephalopod.framework; sourceTree = "<group>"; };
+		D2AC31C61EBC20E1001D2239 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		D2AC31C81EBC20E6001D2239 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +49,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2EABB131E79D78800524726 /* Alamofire.framework in Frameworks */,
-				C2EABB141E79D78800524726 /* Cephalopod.framework in Frameworks */,
-				C2EABB151E79D78800524726 /* Chameleon.framework in Frameworks */,
-				C2EABB161E79D78800524726 /* SwiftyJSON.framework in Frameworks */,
+				D2C2373E1EBEB1C2002565E8 /* Alamofire.framework in Frameworks */,
+				D2C2373F1EBEB1C2002565E8 /* Cephalopod.framework in Frameworks */,
+				D2C237401EBEB1C2002565E8 /* Chameleon.framework in Frameworks */,
+				D2C237411EBEB1C2002565E8 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +106,10 @@
 		C2EABB0E1E79D78800524726 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C2EABB0F1E79D78800524726 /* Alamofire.framework */,
-				C2EABB101E79D78800524726 /* Cephalopod.framework */,
-				C2EABB111E79D78800524726 /* Chameleon.framework */,
-				C2EABB121E79D78800524726 /* SwiftyJSON.framework */,
+				D2AC31C81EBC20E6001D2239 /* SwiftyJSON.framework */,
+				D2AC31C61EBC20E1001D2239 /* Chameleon.framework */,
+				D2AC31C41EBC20DD001D2239 /* Cephalopod.framework */,
+				D2AC31C21EBC20C4001D2239 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,8 +123,8 @@
 			buildPhases = (
 				C224748C1E468EAF002CCA48 /* Sources */,
 				C224748D1E468EAF002CCA48 /* Frameworks */,
-				C224748E1E468EAF002CCA48 /* Resources */,
 				C2EABB171E79D7A600524726 /* Run Script */,
+				C224748E1E468EAF002CCA48 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -338,7 +338,6 @@
 		C22474A31E468EAF002CCA48 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C456HZB8BY;
@@ -360,7 +359,6 @@
 		C22474A41E468EAF002CCA48 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C456HZB8BY;
