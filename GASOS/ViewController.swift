@@ -12,6 +12,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 import Chameleon
+import AVFoundation
 
 
 // the following UUID's were generated on 1/15/2017 using https://www.uuidgenerator.net
@@ -37,12 +38,14 @@ class ViewController: UIViewController {
     
     var monitoring: Bool = false
     
+    var testDownloadedSoundDestinationUrl: URL? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         #if DEBUG
-                debugInfo.isHidden = false
+            debugInfo.isHidden = false
         #endif
         
         
@@ -51,7 +54,7 @@ class ViewController: UIViewController {
         startExploringMessage.numberOfLines = 0 // For stupid resons this isn't working FIXME. For now, reduce to one line? Original text: Begin exploring.\nMake sure you have your headphones on!
         
         
-
+        
         // Disable sleep - you don't want to have to keep tapping your phone to keep it awake
         UIApplication.shared.isIdleTimerDisabled = true
         
@@ -70,6 +73,63 @@ class ViewController: UIViewController {
     
     @IBAction func startMonitor(_ sender: UIButton) {
         startExploringMessage.isHidden = false
+        
+        // Alamofire 4
+        let destination = DownloadRequest.suggestedDownloadDestination(
+            for: .cachesDirectory,
+            in: .userDomainMask
+        )
+        
+        // this is experimental code - trying to load sound from s3
+        Alamofire.download("https://s3.amazonaws.com/sfraser/m21-Test1.mp3", to: destination)
+            .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                print("Progress: \(progress.fractionCompleted)")
+            }
+            .response{ response in
+                
+                print( response.destinationURL! )
+                print( response.temporaryURL )
+                print( response.destinationURL )
+                
+                
+                // @todo - the sound is downloading, now need to get it into AVAudioPlayer
+                let sound = NSDataAsset(name: (response.destinationURL?.absoluteString)!)
+                
+                print( "Sound name: \(String(describing: sound?.description))" )
+                
+                self.testDownloadedSoundDestinationUrl = response.destinationURL
+                
+                //                let newPlayer = try AVAudioPlayer(data: sound)
+                //                newPlayer.volume = 0
+                //                newPlayer.numberOfLoops = 0 // will loop forever
+                //                newPlayer.pan = panned
+                //                newPlayer.setVolume(newVolume, fadeDuration: 1)
+                //                newPlayer.play()
+                
+        }
+        
+        do {
+            
+            
+            if( testDownloadedSoundDestinationUrl != nil ) {
+                // let newPlayer = try AVAudioPlayer( contentsOf: testDownloadedSoundDestinationUrl!)
+                let sound = NSDataAsset(name: "Pavilion-1")
+                let newPlayer = try AVAudioPlayer( data: (sound?.data)!)
+                
+                print ("PLAYING THE FILE")
+                newPlayer.volume = 0
+                newPlayer.numberOfLoops = 0 // will loop forever
+                // newPlayer.pan = panned
+                newPlayer.setVolume(1, fadeDuration: 1)
+                newPlayer.prepareToPlay()
+                newPlayer.play() // @todo I AM HERE - getting the hiss of silence for asset as well as when creating AVAudioPlayer( contentsOf: testDownloadedSoundDestinationUrl!) so maybe something is downloading but playback here is not working (test on real device)
+                
+            }
+        }
+        catch {
+            print ("bad bad bad")
+        }
+        
         
         if monitoring {
             sender.setTitle("Start!", for: .normal)
@@ -97,7 +157,7 @@ class ViewController: UIViewController {
         for beaconInfo in mapBeaconInfo {
             stopMonitoringItem(item: beaconInfo.value)
         }
-
+        
         // make sure the sound engine shuts all the sounds down too
         soundPlayer.silenceAllSounds()
     }
@@ -180,8 +240,8 @@ extension ViewController : CLLocationManagerDelegate {
     private func beaconRegionWithItem(item:BeaconInfo) -> CLBeaconRegion {
         let beaconRegion = CLBeaconRegion(proximityUUID: item.uuid,
                                           //major: item.majorValue,
-                                          //minor: item.minorValue,
-                                          identifier: item.name)
+            //minor: item.minorValue,
+            identifier: item.name)
         return beaconRegion
     }
     
@@ -214,7 +274,7 @@ extension ViewController : CLLocationManagerDelegate {
         
         do {
             if beacons.isEmpty {
-                 // BleLog("No Beacons nearby")
+                // BleLog("No Beacons nearby")
                 // soundPlayer.silenceAllSounds()
                 if let beaconInfo = mapBeaconInfo[region.proximityUUID.uuidString] {
                     
@@ -279,7 +339,7 @@ extension ViewController : CLLocationManagerDelegate {
                         else if rangedBeacon.proximity == CLProximity.far {
                             if !(beaconInfo.backgroundSound.isEmpty) {
                                 // BleLog("Playing background sound: \(beaconInfo.backgroundSound) at \(beaconInfo.backgroundVolume)")
-//                                try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
+                                //                                try soundPlayer.playSound(named: (beaconInfo.backgroundSound), atVolume: (beaconInfo.backgroundVolume))
                                 try soundPlayer.playSound(named: beaconInfo.backgroundSound, atVolume: beaconInfo.farVolume)
                             }
                             

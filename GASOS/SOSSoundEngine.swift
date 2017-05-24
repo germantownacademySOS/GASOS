@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 import Cephalopod
+import Alamofire
 
 class SOSSoundEngine {
     
@@ -94,6 +95,26 @@ class SOSSoundEngine {
         do {
             
             // check to see if we already have a player for this sound
+            
+            // Alamofire 4
+            let destination = DownloadRequest.suggestedDownloadDestination(
+                for: .cachesDirectory,
+                in: .userDomainMask
+            )
+            
+            // this is experimental code - trying to load sound from s3
+            Alamofire.download("https://s3.amazonaws.com/sfraser/m21-Test1.mp3", to: destination)
+                .downloadProgress(queue: DispatchQueue.global(qos: .utility)) { progress in
+                    print("Progress: \(progress.fractionCompleted)")
+                }
+                .response{ response in
+                    
+                    print( response.destinationURL!)
+                    
+                    // @todo - the sound is downloading, now need to get it into AVAudioPlayer
+                    let sound = NSDataAsset(name: (response.destinationURL?.absoluteString)!)
+                    self.mapSounds[nameOfAudioFileInAssetCatalog] = sound
+            }
             
             if let ceph = mapCephs[nameOfAudioFileInAssetCatalog] {
                 
